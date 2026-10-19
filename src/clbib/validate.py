@@ -36,8 +36,8 @@ def sample() -> None:
     print(f"wrote {s.height} rows to {out}")
 
 
-def score() -> None:
-    lab = pl.read_csv(VAL / "labels.csv", infer_schema_length=None)
+def score(path: str = "labels.csv", tag_out: str = "") -> None:
+    lab = pl.read_csv(VAL / path, infer_schema_length=None)
     lab = lab.with_columns([pl.col(k).fill_null(0).cast(pl.Int8) for k in list(RULES) + ["is_cl"]])
     n_not_cl = int((lab["is_cl"] == 0).sum())
     lab = lab.filter(pl.col("is_cl") == 1)
@@ -55,11 +55,47 @@ def score() -> None:
         rows.append({"label": k, "support": tp + fn, "tp": tp, "fp": fp, "fn": fn,
                      "precision": prec, "recall": rec, "f1": f1})
     res = pl.DataFrame(rows).with_columns(pl.col("precision", "recall", "f1").round(2))
-    res.write_csv(C.RESULTS / "validation.csv")
+    out = C.RESULTS / f"validation{('_' + tag_out) if tag_out else ''}.csv"
+    res.write_csv(out)
+    print(f"labels: {path} -> {out}")
     with pl.Config(tbl_rows=20):
         print(res)
     print(f"labelled as not continual learning (corpus precision errors): {n_not_cl} of {n_not_cl + lab.height}")
 
 
+def review_sample() -> None:
+    """50 rows (stratified, every 3rd) for blind human review of the LLM labels."""
+    s = pl.read_csv(VAL / "to_label.csv", infer_schema_length=None)
+    out = VAL / "human_review.csv"
+    if out.exists():
+        sys.exit(f"{out} exists; refusing to overwrite.")
+    s.gather_every(3).write_csv(out)
+    print(f"wrote {out}")
+
+
+def agreement(a: str = "labels_llm.csv", b: str = "labels_human.csv") -> None:
+    """Per-label agreement and Cohen's kappa between two labellers on shared ids."""
+    la = pl.read_csv(VAL / a, infer_schema_length=None)
+    lb = pl.read_csv(VAL / b, infer_schema_length=None)
+    cols = ["is_cl"] + list(RULES)
+    j = la.select(["id"] + cols).join(lb.select(["id"] + cols), on="id", suffix="_b")
+    rows = []
+    for k in cols:
+        x = j[k].fill_null(0).cast(pl.Int8).to_list()
+        y = j[k + "_b"].fill_null(0).cast(pl.Int8).to_list()
+        n = len(x)
+        po = sum(p == q for p, q in zip(x, y)) / n
+        px, py = sum(x) / n, sum(y) / n
+        pe = px * py + (1 - px) * (1 - py)
+        kappa = (po - pe) / (1 - pe) if pe < 1 else None
+        rows.append({"label": k, "n": n, "pos_a": sum(x), "pos_b": sum(y),
+                     "agreement": round(po, 2), "kappa": round(kappa, 2) if kappa is not None else None})
+    res = pl.DataFrame(rows)
+    res.write_csv(C.RESULTS / "agreement_llm_vs_human.csv")
+    with pl.Config(tbl_rows=20):
+        print(res)
+
+
 if __name__ == "__main__":
-    {"sample": sample, "score": score}[sys.argv[1]]()
+    cmd, *rest = sys.argv[1:]
+    {"sample": sample, "score": score, "review": review_sample, "agreement": agreement}[cmd](*rest)

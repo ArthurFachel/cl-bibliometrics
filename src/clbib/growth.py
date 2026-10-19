@@ -33,6 +33,8 @@ def main() -> None:
 
     by_year = (final.group_by("first_year")
                .agg(pl.len().alias("works"),
+                    pl.col("is_focused").sum().alias("focused"),
+                    (pl.col("is_arxiv") & pl.col("is_focused")).sum().alias("focused_on_arxiv"),
                     pl.col("is_arxiv").sum().alias("on_arxiv"),
                     (pl.col("type") == "preprint").sum().alias("preprint_only"))
                .sort("first_year")
@@ -49,21 +51,24 @@ def main() -> None:
     by_query.write_csv(C.RESULTS / "growth_by_query.csv")
 
     plot = by_year.filter(pl.col("first_year") >= 2010)
-    yrs, n = plot["first_year"].to_list(), plot["works"].to_list()
+    yrs, n_all = plot["first_year"].to_list(), plot["works"].to_list()
+    n = plot["focused"].to_list()
     fig, ax = plt.subplots(figsize=(9, 4.8), dpi=150)
+    ax.bar(yrs, n_all, color="#dfe7ec", label="broad (any mention, in scope)")
     colors = ["#9db4c0" if y == snap.year else "#2b5d7d" for y in yrs]
-    ax.bar(yrs, n, color=colors)
-    ax.plot(yrs, plot["on_arxiv"].to_list(), color="#c8553d", marker="o", ms=3, lw=1.5,
-            label="also on arXiv")
+    ax.bar(yrs, n, color=colors, label="focused (CL is the topic)")
+    ax.plot(yrs, plot["focused_on_arxiv"].to_list(), color="#c8553d", marker="o", ms=3, lw=1.5,
+            label="focused, also on arXiv")
     if snap.year in yrs:
-        ax.annotate(f"partial ({snap.isoformat()})", (snap.year, n[yrs.index(snap.year)]),
+        ax.annotate(f"partial ({snap.isoformat()})", (snap.year, n_all[yrs.index(snap.year)]),
                     xytext=(0, 6), textcoords="offset points", ha="center", fontsize=8, color="#555")
     ax.set_title("Continual learning publications per year (OpenAlex, deduplicated)", loc="left", fontsize=11)
     ax.set_ylabel("works (first appearance year)")
     ax.set_xticks([y for y in yrs if y % 2 == 0])
     ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(frameon=False, fontsize=9)
-    fig.text(0.01, 0.01, f"n = {final.height:,} works | query + scope rules in src/clbib/config.py",
+    ax.legend(frameon=False, fontsize=9, loc="upper left")
+    fig.text(0.01, 0.01, f"focused n = {final['is_focused'].sum():,} of {final.height:,} in scope | "
+             "rules in src/clbib/config.py",
              fontsize=7, color="#666")
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     fig.savefig(C.FIGURES / "growth.png")

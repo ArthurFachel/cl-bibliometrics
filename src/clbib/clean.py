@@ -149,6 +149,11 @@ def main() -> None:
          & pl.col("publication_year").is_between(C.MIN_YEAR, this_year)).alias("in_scope")
     )
     df = dedupe(df)
+    df = df.with_columns(
+        (pl.col("title").fill_null("").str.contains(C.FOCUS_TERMS)
+         | (pl.col("abstract").fill_null("").str.count_matches(C.FOCUS_TERMS) >= C.FOCUS_MIN_ABSTRACT_HITS)
+         ).alias("is_focused")
+    )
     C.PROCESSED.mkdir(parents=True, exist_ok=True)
     df.write_parquet(C.PROCESSED / "works.parquet")
     pl.DataFrame(auths, infer_schema_length=None).write_parquet(C.PROCESSED / "authorships.parquet")
@@ -156,7 +161,8 @@ def main() -> None:
 
     final = df.filter(pl.col("in_scope") & pl.col("is_canonical"))
     print(f"raw works: {df.height} | in scope: {df['in_scope'].sum()} | "
-          f"canonical in scope: {final.height} | merged duplicates: {df['in_scope'].sum() - final.height}")
+          f"canonical in scope: {final.height} | merged duplicates: {df['in_scope'].sum() - final.height} | "
+          f"focused: {final['is_focused'].sum()}")
     print(f"authorship rows: {len(auths)} | reference edges: {len(refs)}")
 
 

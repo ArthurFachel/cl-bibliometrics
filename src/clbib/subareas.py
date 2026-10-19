@@ -67,7 +67,7 @@ def tag(df: pl.DataFrame) -> pl.DataFrame:
 
 def main() -> None:
     works = pl.read_parquet(C.PROCESSED / "works.parquet")
-    final = works.filter(pl.col("in_scope") & pl.col("is_canonical"))
+    final = works.filter(pl.col("in_scope") & pl.col("is_canonical") & pl.col("is_focused"))
     tagged = tag(final.select("id", "first_year", "title", "abstract", "is_arxiv"))
     tagged = tagged.with_columns(
         pl.col("abstract").is_not_null().alias("has_abstract"),
@@ -99,7 +99,7 @@ def main() -> None:
         ax.legend(frameon=False, fontsize=8, ncol=2)
     fig.suptitle("Continual learning sub-areas over time (rule-based tags, see validation/)",
                  x=0.01, ha="left", fontsize=11)
-    fig.text(0.01, 0.01, f"n = {tagged.filter(pl.col('has_abstract')).height:,} works with abstract | "
+    fig.text(0.01, 0.01, f"focused corpus, n = {tagged.filter(pl.col('has_abstract')).height:,} works with abstract | "
              f"{x[-1]} partial", fontsize=7, color="#666")
     fig.tight_layout(rect=(0, 0.03, 1, 0.95))
     C.FIGURES.mkdir(parents=True, exist_ok=True)

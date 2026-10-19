@@ -56,3 +56,13 @@ LIFELONG_ML_TERMS = (r"(?i)forget|neural|deep learning|reinforcement|\bagent|rob
 LIFELONG_EDU_TERMS = (r"(?i)educat|e-learning|elearning|student|teacher|universit|school|mooc|curricul|"
                       r"librar|literacy|pedagog|course|learners")
 LIFELONG_AI_SUBFIELDS = {"Artificial Intelligence", "Computer Vision and Pattern Recognition"}
+
+# "Focused" corpus: CL must be the topic, not a passing mention. Rule = a CL term
+# in the title OR >= FOCUS_MIN_ABSTRACT_HITS mentions in the abstract.
+# On the 150-work validation sample (LLM labels, 2026-10-19) this raised corpus
+# precision from 0.77 to 0.95 at recall 0.87. Tuned on that same sample, so
+# treat as optimistic until the human review confirms it.
+FOCUS_TERMS = (r"(?i)continual(ly)? learn|catastrophic(ally)? forget|class-incremental|task-incremental|"
+               r"domain-incremental|lifelong (machine |reinforcement )?learn|incremental learning|"
+               r"continual (pre-?training|fine-?tuning|adaptation|instruction)|forgetting")
+FOCUS_MIN_ABSTRACT_HITS = 2
