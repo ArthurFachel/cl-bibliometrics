@@ -9,7 +9,7 @@ Label each row from the title and abstract only, write `1` when the label applie
 | is_cl | is actually about continual / lifelong / incremental learning or catastrophic forgetting (0 = corpus false positive) |
 | replay | stores, generates or replays past samples or features |
 | regularization | constrains updates by importance weights (EWC, SI, MAS), distillation or other loss penalties |
-| architecture | grows the network, isolates parameters, uses masks, experts or modules per task |
+| architecture | **proposes** a new structure: grows the network, isolates parameters with masks, adds experts or task-specific modules. Analysis papers that only study which existing components to specialize do not count (criterion fixed with the human reviewer on 2026-10-19; the LLM labels used a broader reading, so part of the LLM-vs-human disagreement on this tag is definitional) |
 | optimization | projects or constrains gradients (orthogonal, null space, GEM) or targets the loss landscape |
 | peft_llm | works with LLMs, VLMs or pre-trained foundation models, or uses LoRA, prompts or adapters |
 | plasticity | studies loss of plasticity, dormant neurons, resets or trainability |
