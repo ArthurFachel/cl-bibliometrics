@@ -33,7 +33,10 @@ RULES: dict[str, tuple[str, str]] = {
                                  r"\blwf\b|fisher information|parameter importance|importance weight"),
     "architecture": ("method", r"dynamic architecture|network expansion|expandable|expansion|"
                                r"progressive (neural )?network|parameter isolation|sub-?network|"
-                               r"\bmask(s|ing|ed)?\b|packnet|mixture[- ]of[- ]experts|\bmoe\b|modular"),
+                               r"\bmask(s|ing|ed)?\b|packnet|mixture[- ]of[- ]experts|\bmoe\b|modular|"
+                               r"\bexperts?\b|ensemble|\bgat(e|es|ing)\b|neural architecture search|"
+                               r"task-specific (module|head|parameter|layer|branch|component)s?|"
+                               r"\bgrow(s|ing|th)? (the )?(network|model|capacity)|multi-head|\bbranch(es)?\b"),
     "optimization": ("method", r"gradient projection|orthogonal|null[- ]space|subspace|"
                                r"gradient episodic memory|\ba-?gem\b|sharpness|flat minima|loss landscape"),
     "peft_llm": ("method", r"large language model|\bllms?\b|language model|\blora\b|low-rank adaptation|"
@@ -41,28 +44,45 @@ RULES: dict[str, tuple[str, str]] = {
                            r"foundation model|pre-?trained (model|transformer)|continual pre-?training"),
     "plasticity": ("method", r"loss of plasticity|plasticity loss|dormant neuron|primacy bias|"
                              r"trainability|re-?initiali[sz]|\breset"),
-    "theory": ("study", r"theoretical|\btheory\b|we prove|upper bound|lower bound|generali[sz]ation bound|"
-                        r"provabl|mechanis(m|tic) of forgetting|analytic"),
+    "theory": ("study", r"theoretical (analysis|result|guarantee|understanding|insight|characteri[sz])|"
+                        r"theoretically|we prove|theorem|upper bound|lower bound|generali[sz]ation bound|"
+                        r"provabl|closed-form|convergence (analysis|guarantee|rate)|theory of"),
     "survey_benchmark": ("study", r"\bsurvey\b|systematic review|literature review|comprehensive review|"
-                                  r"(introduce|propose|present|release|construct|build)s? (a |an |the )?"
-                                  r"(new |novel |large-scale |comprehensive |unified )*(benchmark|dataset)|"
-                                  r"benchmark (for|to evaluate|suite)"),
-    "online": ("setting", r"online continual|task-free|task-agnostic|data stream|streaming|concept drift"),
+                                  r"(introduce|propose|present|release|construct|build|create|collect|define)s? "
+                                  r"(a |an |the )?(new |novel |large-scale |comprehensive |unified |realistic )*"
+                                  r"(benchmark|dataset|evaluation protocol)|benchmarks? (for|to evaluate|suite)"),
+    "online": ("setting", r"online (continual|learning|setting|scenario|fashion|manner|incremental|class|"
+                          r"adaptation|update)|task-free|task-agnostic|single[- ]pass|one[- ]pass|"
+                          r"concept drift|non-stationary|real-time|streaming (data|setting|scenario)"),
     "federated": ("setting", r"federated"),
     "rl": ("setting", r"reinforcement learning|policy gradient|actor-critic|q-learning|\brl\b|"
                       r"markov decision"),
     "application": ("domain", r"medical|clinical|patient|\becg\b|\beeg\b|mri\b|fault diagnos|"
                               r"intrusion|anomaly detection|remote sensing|hyperspectral|radar|"
                               r"autonomous driving|vehicle|speech|recommend|traffic|power (system|grid)|"
-                              r"industrial|wireless|\biot\b|malware|sensor|manufactur|battery|satellite"),
+                              r"industrial|wireless|\biot\b|malware|sensor|manufactur|battery|satellite|"
+                              r"audio|sound|spoken|dialog|document image|face|forgery|deepfake|food|"
+                              r"wearable|activity recognition|tracking control|\bqo[se]\b|cyber|"
+                              r"edge comput|re-?identification"),
 }
 METHODS = [k for k, (ax, _) in RULES.items() if ax == "method"]
+# Extra rules matched against the TITLE only (OR-ed with the main rule).
+TITLE_RULES = {
+    "survey_benchmark": r"\b(benchmark|dataset|survey|review)s?\b",
+}
 
 
 def tag(df: pl.DataFrame) -> pl.DataFrame:
     text = pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "),
                           pl.col("abstract").fill_null("")]).str.to_lowercase()
-    return df.with_columns([text.str.contains(rx).alias(name) for name, (_, rx) in RULES.items()])
+    title = pl.col("title").fill_null("").str.to_lowercase()
+    exprs = []
+    for name, (_, rx) in RULES.items():
+        e = text.str.contains(rx)
+        if name in TITLE_RULES:
+            e = e | title.str.contains(TITLE_RULES[name])
+        exprs.append(e.alias(name))
+    return df.with_columns(exprs)
 
 
 def main() -> None:

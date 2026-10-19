@@ -20,16 +20,21 @@ STRATA = [(2015, 2021, 50), (2022, 2024, 50), (2025, 2026, 50)]
 SEED = 20261019
 
 
-def sample() -> None:
+def sample(name: str = "to_label.csv", seed: str = str(SEED)) -> None:
+    """Draw a stratified sample, excluding ids already in any validation CSV."""
     works = pl.read_parquet(C.PROCESSED / "works.parquet")
     pool = works.filter(pl.col("in_scope") & pl.col("is_canonical") & pl.col("abstract").is_not_null())
-    parts = [pool.filter(pl.col("first_year").is_between(a, b)).sample(n, seed=SEED)
+    used = set()
+    for f in VAL.glob("*.csv"):
+        used |= set(pl.read_csv(f, columns=["id"])["id"].to_list())
+    pool = pool.filter(~pl.col("id").is_in(list(used)))
+    parts = [pool.filter(pl.col("first_year").is_between(a, b)).sample(n, seed=int(seed))
              for a, b, n in STRATA]
     s = (pl.concat(parts).select("id", "first_year", "title", "abstract")
          .with_columns([pl.lit(None, dtype=pl.Int8).alias(k) for k in RULES]
                        + [pl.lit(None, dtype=pl.Int8).alias("is_cl"), pl.lit("").alias("notes")]))
     VAL.mkdir(exist_ok=True)
-    out = VAL / "to_label.csv"
+    out = VAL / name
     if out.exists():
         sys.exit(f"{out} exists; refusing to overwrite labels. Delete it to redraw.")
     s.write_csv(out)
