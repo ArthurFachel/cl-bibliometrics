@@ -66,3 +66,7 @@ tests/        unit tests for parsing and dedup
 ## Author
 
 Arthur Fachel, Data Analytics @ PUCRS, MALTA Lab. Research on neuron-level plasticity for continual learning.
+
+## License
+
+Code: MIT. Data: OpenAlex metadata is CC0.
