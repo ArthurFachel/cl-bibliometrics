@@ -1,9 +1,9 @@
 PY := .venv/bin/python
 RUN := PYTHONPATH=src $(PY) -m
 
-.PHONY: all fetch clean growth test refetch
+.PHONY: all fetch clean growth subareas validate test refetch
 
-all: fetch clean growth
+all: fetch clean growth subareas
 
 fetch:
 	$(RUN) clbib.fetch
@@ -16,6 +16,12 @@ clean:
 
 growth:
 	$(RUN) clbib.growth
+
+subareas:
+	$(RUN) clbib.subareas
+
+validate:
+	$(RUN) clbib.validate score
 
 test:
 	PYTHONPATH=src $(PY) -m unittest discover -s tests -v
