@@ -38,7 +38,10 @@ def api_key() -> str | None:
     if k:
         return k.strip()
     p = Path.home() / ".hermes" / ".secrets" / "openalex_api_key"
-    return p.read_text().strip() if p.exists() else None
+    k = p.read_text().strip() if p.exists() else ""
+    if p.exists() and not k:
+        sys.exit(f"{p} exists but is empty: the key was not saved. Re-run the save command.")
+    return k or None
 
 
 def get_json(params: dict, retries: int = 5) -> dict:
@@ -92,7 +95,7 @@ def fetch_query(name: str, spec: dict, force: bool) -> None:
     while cursor:
         data = get_json({"filter": flt, "per_page": 200, "cursor": cursor,
                          "select": ",".join(C.SELECT), "mailto": C.MAILTO})
-        expected = data["meta"]["count"]
+        expected = data["meta"].get("count") or expected
         if not data["results"]:
             break
         page_no += 1

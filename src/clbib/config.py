@@ -43,3 +43,16 @@ SELECT = [
 IN_SCOPE_FIELDS = {"Computer Science", "Engineering", "Neuroscience", "Mathematics"}
 KEEP_TYPES = {"article", "conference-paper", "preprint", "review", "book-chapter"}
 MIN_YEAR = 1985
+
+# Works found ONLY by the "lifelong learning" query need extra evidence of ML.
+# Measured 2026-10-19: of 6,201 lifelong-only CS works, the top topics were AI in
+# Education, digital literacy, e-learning and MOOCs (subfield Information Systems
+# = 4,189). Gate: an ML term AND (AI/CV subfield OR no education term).
+# Spot check: ~532 kept, mostly ML; known misses e.g. "Lifelong Learning by
+# Adjusting Priors". Recall cost is measured in F2.
+LIFELONG_ML_TERMS = (r"(?i)forget|neural|deep learning|reinforcement|\bagent|robot|replay|plasticity|"
+                     r"incremental|knowledge transfer|meta-learning|sequence of tasks|sequential tasks|"
+                     r"new tasks|previous tasks|non-stationary|lifelong (machine|reinforcement|robot)")
+LIFELONG_EDU_TERMS = (r"(?i)educat|e-learning|elearning|student|teacher|universit|school|mooc|curricul|"
+                      r"librar|literacy|pedagog|course|learners")
+LIFELONG_AI_SUBFIELDS = {"Artificial Intelligence", "Computer Vision and Pattern Recognition"}

@@ -60,6 +60,7 @@ def main() -> None:
                     xytext=(0, 6), textcoords="offset points", ha="center", fontsize=8, color="#555")
     ax.set_title("Continual learning publications per year (OpenAlex, deduplicated)", loc="left", fontsize=11)
     ax.set_ylabel("works (first appearance year)")
+    ax.set_xticks([y for y in yrs if y % 2 == 0])
     ax.spines[["top", "right"]].set_visible(False)
     ax.legend(frameon=False, fontsize=9)
     fig.text(0.01, 0.01, f"n = {final.height:,} works | query + scope rules in src/clbib/config.py",

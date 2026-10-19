@@ -135,10 +135,17 @@ def main() -> None:
             refs.append({"work_id": w["id"], "ref_id": r})
 
     df = pl.DataFrame(works, infer_schema_length=None)
+    text = pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "), pl.col("abstract").fill_null("")])
+    lifelong_only = (pl.col("queries").list.len() == 1) & pl.col("queries").list.contains("lifelong_cs")
+    lifelong_ok = (text.str.contains(C.LIFELONG_ML_TERMS)
+                   & (pl.col("subfield").is_in(list(C.LIFELONG_AI_SUBFIELDS))
+                      | ~text.str.contains(C.LIFELONG_EDU_TERMS)))
+    df = df.with_columns((~lifelong_only | lifelong_ok).alias("passes_lifelong_gate"))
     df = df.with_columns(
         (pl.col("field").is_in(list(C.IN_SCOPE_FIELDS))
          & pl.col("type").is_in(list(C.KEEP_TYPES))
          & ~pl.col("is_retracted")
+         & pl.col("passes_lifelong_gate")
          & pl.col("publication_year").is_between(C.MIN_YEAR, this_year)).alias("in_scope")
     )
     df = dedupe(df)
