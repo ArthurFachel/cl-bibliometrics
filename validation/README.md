@@ -25,6 +25,7 @@ The labels are multi-label: a paper can be `replay` + `peft_llm` + `application`
 ## Files
 
 - `to_label.csv`: the 150-row sample, with blank label columns.
+- `test_to_label.csv` / `labels_llm_test.csv`: a second, disjoint 150-row sample and its LLM labels, used once as held-out test after the rules were frozen (commit 098968f).
 - `labels_llm.csv`: silver labels from six independent LLM labellers (25 rows each) that never saw the rules. Doubtful calls are explained in `notes`. One row (*Continual Learning in Task-Oriented Dialogue Systems*) has a boilerplate abstract, and its labeller used prior knowledge of the paper instead of the text, so its method labels are flagged as unreliable.
 - `human_review.csv`: every third row of the sample (50 rows), left blank for blind human labelling. Save it as `labels_human.csv` when done, then run:
 
