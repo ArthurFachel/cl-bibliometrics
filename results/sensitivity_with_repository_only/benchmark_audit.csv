@@ -1,0 +1,83 @@
+benchmark,id,snippet
+Permuted MNIST,https://openalex.org/W7160886852,"p continual learning settings, such as Slowly-Changing Regression and Permuted MNIST, optimization readiness more reliably ranks check"
+Permuted MNIST,https://openalex.org/W4214627891,mpared with Elastic Weight Consolidation on standard datasets such as permuted MNIST and split MNIST on classification tasks using ful
+Permuted MNIST,https://openalex.org/W7213952334,"om, and three logistic-map schedules are compared across Split MNIST, Permuted MNIST, and Split CIFAR-10. Using five paired seeds, we "
+Permuted MNIST,https://openalex.org/W2803552920," over 90% test accuracy across a sequence of 50 instantiations of the permuted MNIST dataset, substantially outperforming related meth"
+Split/Rotated MNIST,https://openalex.org/W4414946120,"lly plausible continual learning model. We evaluate this model on the Split-MNIST task, a popular continual learning benchmark, and"
+Split/Rotated MNIST,https://openalex.org/W7106679803,"luate a single replay mechanism on six streaming scenarios built from Rotated MNIST, ElectricityLoadDiagrams 2011-2014, and Airlines "
+Split/Rotated MNIST,https://openalex.org/W7167885929,"ions. Generative replay with local generators turns class-incremental Split-MNIST forgetting (chance level, the same as EWC and SI)"
+Split/Rotated MNIST,https://openalex.org/W2943035085,rk achieves these desiderata on two benchmarks in continual learning: split MNIST and permuted MNIST. We first report significantly
+MNIST (any),https://openalex.org/W7214958040,"error than a no-information baseline, and reproduces under controlled MNIST permutations and CIFAR-10 rotations (r=-0.804, -0"
+MNIST (any),https://openalex.org/W4366088936,"s-domain orders with the baseline models over the following datasets: MNIST, P-MNIST, CIFAR-10, CIFAR-100, and SVHN, etc. The"
+MNIST (any),https://openalex.org/W2964917234,"d neuronal redundancy. We demonstrate high classification accuracy in MNIST and CIFAR10 datasets (98% and 85%, respectively) "
+MNIST (any),https://openalex.org/W3168149265,"n, named Rainbow Memory (RM). With extensive empirical validations on MNIST, CIFAR10, CIFAR100, and ImageNet datasets, we sho"
+SVHN,https://openalex.org/W4226278852,"f 5 classes each), and a heterogeneous sequence of tasks using MNIST, SVHN and CIFAR10 data sets. The demonstrations and the"
+SVHN,https://openalex.org/W4297838857,"ent reduction in forgetting verified on different settings for MNIST, SVHN and CIFAR-10 datasets.91"
+SVHN,https://openalex.org/W4404030750,"ve replay, yield the most favourable results. Regarding the MNIST and SVHN datasets, our method has achieved an accuracy imp"
+SVHN,https://openalex.org/W2786958491,"hat our deep network can learn to sequentially classify the CIFAR-10, SVHN and MNIST datasets. After training on all tasks, "
+CIFAR-10/100,https://openalex.org/W7128472237,"ts in a rehearsal-free manner (e.g., 15.10\%, 13.36\%, and 12.56\% on CIFAR-100, ImageNet-R, and CUB-200 under Sup-21/1K). Our so"
+CIFAR-10/100,https://openalex.org/W2906272760,"only used benchmarks for Continual Learning (MNIST, Fashion MNIST and CIFAR10). We found that among all models, the original GA"
+CIFAR-10/100,https://openalex.org/W7134196698, our PS-SNN achieves an average incremental accuracy of 76.42% on the CIFAR100-B0 benchmark over 10 incremental steps. PS-SNN no
+CIFAR-10/100,https://openalex.org/W3148342934,-art non zero-shot task incremental learning method by over 5% on the CIFAR-100 dataset. Our approach also significantly outperfo
+Tiny/mini-ImageNet,https://openalex.org/W4413277607,"ssues in FSCIL can be alleviated. Extensive experiments on CIFAR-100, mini-ImageNet, and CUB-200 demonstrate the effectiveness of CTR"
+Tiny/mini-ImageNet,https://openalex.org/W4221145940,"onducted on benchmark datasets of Seq-CIFAR-10, Seq-CIFAR-100 and Seq-Tiny-ImageNet, we show that BN Tricks can bring significant per"
+Tiny/mini-ImageNet,https://openalex.org/W4404101683,he state-of-the-art models by over 13% and 7% on the final session of miniImageNet and CIFAR-100 FSCIL benchmarks.
+Tiny/mini-ImageNet,https://openalex.org/W2974317861,"e empirically scrutinize which
+method performs best, both on balanced Tiny Imagenet and a large-scale
+unbalanced iNaturalist datasets"
+ImageNet (full/subset),https://openalex.org/W4403789110,""" periods. We evaluate PCMC's performance on streams created from the ImageNet and Places365 datasets. Additionally, we explore "
+ImageNet (full/subset),https://openalex.org/W3174044702,t CIL methods and showed the performance improvement on CIFAR-100 and ImageNet datasets.
+ImageNet (full/subset),https://openalex.org/W4386160084,dating for network compression. Extensive experiments on CIFAR100 and ImageNet100 datasets demonstrate the superiority of our me
+ImageNet (full/subset),https://openalex.org/W3168149265,"With extensive empirical validations on MNIST, CIFAR10, CIFAR100, and ImageNet datasets, we show that the proposed method signif"
+ImageNet-R/A,https://openalex.org/W4403734190,"formance on a wide range of datasets, including CIFAR100, CUB200, and ImageNet-R."
+ImageNet-R/A,https://openalex.org/W4414199096," expansion. Extensive experiments on various CL benchmarks, including ImageNet-R, CIFAR100, and CUB200 for class-incremental learn"
+ImageNet-R/A,https://openalex.org/W4413146313,"-art performance across three benchmark datasets, including CIFAR100, ImageNet-R and CUB datasets."
+ImageNet-R/A,https://openalex.org/W4390871722,"the-art by 1.3% and 3.6% in last-incremental accuracy on CIFAR100 and ImageNet-R datasets, respectively. Code is available at http"
+DomainNet,https://openalex.org/W4390854612,"valuations on datasets like MNIST, Cifar-100, miniImageNet, PACS, and DomainNet show that MSCL not only competes with but often s"
+DomainNet,https://openalex.org/W4408941365,"te-of-the-art CL solutions and using different datasets (MNIST, USPS, DomainNet), our proposal outperforms different baselines in"
+DomainNet,https://openalex.org/W4409363793,"oss function to optimize our C2F module. Extensive experiments on the DomainNet, CDDB, and CORe50 datasets demonstrate the effect"
+DomainNet,https://openalex.org/W4312952199, shift with accuracy boosts up to 10% on challenging datasets such as DomainNet and OfficeHome.
+CUB-200,https://openalex.org/W4389633822,"ree popular benchmark datasets, including CIFAR100, miniImageNet, and CUB200. We demonstrate that the proposed method achieves"
+CUB-200,https://openalex.org/W4406046682,"r PCL on widely used benchmarks, such as miniImageNet, CIFAR-100, and CUB-200. Experimental results show that our PCL achie"
+CUB-200,https://openalex.org/W7213419062,"mpatible adapter integration. Comprehensive experiments on CIFAR-100, CUB-200, ImageNet-R, ImageNet-A, and VTAB demonstrate"
+CUB-200,https://openalex.org/W3134911507," related to catastrophic forgetting. Via experiments on MiniImageNet, CUB200, and CIFAR100 dataset, we establish new state-of-"
+VTAB,https://openalex.org/W7164394576,"gh prototype-based pseudo-labeling. Across CIFAR-100, ImageNet-R, and VTAB datasets, FedRAN improves average accuracy by up "
+VTAB,https://openalex.org/W7164991215,"+0.80% over EASE), 92.31% on CUB200 (+2.11% over EASE), and 91.84% on VTAB (+1.39% over EASE). In the more challenging FSCIL"
+VTAB,https://openalex.org/W7213419062,"ensive experiments on CIFAR-100, CUB-200, ImageNet-R, ImageNet-A, and VTAB demonstrate the superiority of our approach, high"
+VTAB,https://openalex.org/W4416381158,"h ViT-B/16-IN1K, NCPTM-CIL surpasses the runner-up method by 6.73% on VTAB, 1.25% on CIFAR-100, and 2.5% on OmniBenchmark."
+CORe50,https://openalex.org/W4417310185,"gy. Comprehensive experiments on Split CIFAR-100, Permuted MNIST, and CORe50 demonstrate substantial improvements: 24% forgett"
+CORe50,https://openalex.org/W3019195211," paper, we introduce a novel continual learning protocol based on the CORe50 benchmark and propose two rehearsal-free continua"
+CORe50,https://openalex.org/W4415088129,"nt updates. Extensive evaluations across CIFAR-100, ImageNet-100, and CORe50 show that CIFNet achieves predictive accuracy com"
+CORe50,https://openalex.org/W3204313571,nsive experiments on two challenging continual learning benchmarks of CORE50 and miniImageNet show that DualNet outperforms st
+CLEAR / Stream-51,https://openalex.org/W7161797823,nt performance across replay sizes. In domain incremental learning on CLEAR-10 and class incremental learning on CIFAR-100 and T
+CLEAR / Stream-51,https://openalex.org/W7161140576,"gence (SI) as well as modern methods (DER++, MEMO) on Split ImageNet, CLEAR-100, and CORe50—and long-context reasoning validate t"
+CLEAR / Stream-51,https://openalex.org/W4404088424,"ieval in fewer iterations. Empirical validations on the CIFAR-10/100, CLEAR-10/100, and ImageNet-1K datasets demonstrate that th"
+CLEAR / Stream-51,https://openalex.org/W3212034012,The CLEAR Benchmark: Continual LEArning on Real-World Imagery Continu
+COCO / VOC / ADE20K,https://openalex.org/W3045085138,"lassification distillation loss. Extensive experiments on VOC2007 and COCO are conducted, and the results demonstrate that t"
+COCO / VOC / ADE20K,https://openalex.org/W3190462554, make the continual learning more robust. Extensive evaluation on the PASCAL VOC dataset demonstrates the effectiveness of our app
+COCO / VOC / ADE20K,https://openalex.org/W4414170435,consensus among the models' predictions. We evaluate our method using Pascal VOC2012 as the training dataset and MS COCO2017 as a 
+COCO / VOC / ADE20K,https://openalex.org/W7133232068,"atus quo is to relabel existing datasets with new ontologies (such as COCO-to-LVIS or Mapillary1.2-to-2.0), LECO demonstrate"
+Atari / Meta-World,https://openalex.org/W7158017559,nd latent similarity. We evaluate the approach on benchmarks based on Atari games and simulations of manipulation tasks with 
+Atari / Meta-World,https://openalex.org/W3209994584," including CIFAR-10 regression tasks, visual classification tasks and Atari reinforcement tasks, where AFEC effectively impro"
+Atari / Meta-World,https://openalex.org/W4225131785,"hitecture on two separate benchmarks requiring task-based adaptation: Meta-World, a multi-task reinforcement learning environment "
+Atari / Meta-World,https://openalex.org/W2804175194, handwritten alphabets as well as two reinforcement learning domains: Atari games and 3D maze navigation.
+Text classification,https://openalex.org/W7169525777,"GPT-OSS-20B) sequentially learns three binary classification tasks on AG News, achieving: 99.80%+ accuracy across all tasks 1.3"
+Text classification,https://openalex.org/W7162190164,ously evaluated using a 3-task sequential classification setup on the AG News dataset using an NVIDIA RTX PRO 6000 Blackwell GP
+Text classification,https://openalex.org/W4407231412," and offer a thorough insight into their use in text datasets such as Amazon Reviews and Yelp Reviews. Further, we outline the primary"
+Text classification,https://openalex.org/W7203865197,") Sparse MoE: Sarvam-30B FP8 (30B, Multilingual NLP) Datasets & Tasks AG News: Task A (World vs. Sports), Task B (Business vs. "
+GLUE,https://openalex.org/W3087148478,"the data for weight updates). Compared to other BERT Large methods on GLUE, our 8-task model surpasses other Adapter methods"
+GLUE,https://openalex.org/W7128211987," in small language models during sequential task learning. Using four GLUE benchmark tasks (SST-2, CoLA, MRPC, RTE) and five"
+GLUE,https://openalex.org/W4416252008,for a tradeoff between accuracy and training cost. Experiments on the SuperGLUE benchmark demonstrate that our PCA-based prompt t
+GLUE,https://openalex.org/W7133493879,"($r=0.994$ correlation), Split-CIFAR100 with ViT-LoRA, and sequential GLUE with RoBERTa-LoRA. Our analysis reconciles seemin"
+SuperNI / TRACE,https://openalex.org/W7162795067,"ackbones (Qwen2.5-7B-Instruct, Qwen3-8B, Llama3.1-8B-Instruct) on the TRACE continual-learning benchmark, OPR consistently reduces forgetting; on the shar"
+SuperNI / TRACE,https://openalex.org/W4401306996,h progressively increase in the deep layers. Extensive experiments on TRACE datasets and general language understanding datasets demon
+SuperNI / TRACE,https://openalex.org/W7161120968,"cated SVD to initialize the adapter weights. We evaluate SLICE on the TRACE benchmark and sequences of Super-NI tasks, including a set "
+SuperNI / TRACE,https://openalex.org/W7155084119,"s a mathematically principled parameter importance estimation. On the TRACE benchmark, FGGM shows a 9.6% relative improvement in retain"
+MMLU / GSM8K,https://openalex.org/W7166827580,trade-off between unlearning efficacy (KUR ≈ 0.01) and model utility (MMLU 58.30). 1 .
+MMLU / GSM8K,https://openalex.org/W4387561459,"llowing capabilities. For example, the accuracy of llama2-chat 13B on gsm8k dataset declined precipitously from 28.8\% to 2\%"
+MMLU / GSM8K,https://openalex.org/W4416440147,"t task (Textual MNIST) and measure forgetting on PIQA, HellaSwag, and GSM8k. SmolLM2-1.7B-Instruct initially performs around "
+MMLU / GSM8K,https://openalex.org/W7214648028,"tage points, TDG-LoRA is statistically equivalent to standard LoRA on GSM8K and MedQA and to the corresponding base model ref"
+VQA / CoIN,https://openalex.org/W4416798076,"age content, particularly in tasks such as visual question answering (VQA). However, the rapid evolution of knowledge in re"
+VQA / CoIN,https://openalex.org/W4414272128,nduct experiments on challenging continual visual question answering (VQA-CL) benchmarks. The results demonstrate that DRDF
+VQA / CoIN,https://openalex.org/W7214228442,sual Question Answering in Robotic Surgery Visual question answering (VQA) is crucial for promoting surgical education. In 
+VQA / CoIN,https://openalex.org/W4415350854," Question Answering Objective: Medical Visual Question Answering (Med-VQA), a key technology that integrates computer visio"

@@ -23,6 +23,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import polars as pl  # noqa: E402
 
 from . import config as C  # noqa: E402
+from .corpus import focused  # noqa: E402
 
 RULES: dict[str, tuple[str, str]] = {
     # name: (axis, regex)
@@ -88,7 +89,9 @@ def tag(df: pl.DataFrame) -> pl.DataFrame:
 def main() -> None:
     works = pl.read_parquet(C.PROCESSED / "works.parquet")
     final = works.filter(pl.col("in_scope") & pl.col("is_canonical") & pl.col("is_focused"))
-    tagged = tag(final.select("id", "first_year", "title", "abstract", "is_arxiv"))
+    # Tag every focused work (the parquet is reused by F3); yearly shares use the analysis corpus.
+    tagged = tag(final.select("id", "first_year", "title", "abstract", "is_arxiv")).with_columns(
+        final.select(focused().alias("in_analysis")).to_series())
     tagged = tagged.with_columns(
         pl.col("abstract").is_not_null().alias("has_abstract"),
         (~pl.any_horizontal(METHODS)).alias("no_method"),
@@ -96,7 +99,7 @@ def main() -> None:
     tagged.drop("title", "abstract").write_parquet(C.PROCESSED / "subareas.parquet")
 
     labels = list(RULES) + ["no_method"]
-    yr = (tagged.filter(pl.col("has_abstract") & pl.col("first_year").is_between(2015, 2026))
+    yr = (tagged.filter(pl.col("in_analysis") & pl.col("has_abstract") & pl.col("first_year").is_between(2015, 2026))
           .group_by("first_year")
           .agg([pl.len().alias("works")] + [pl.col(l).mean().round(3).alias(l) for l in labels])
           .sort("first_year"))
@@ -119,7 +122,7 @@ def main() -> None:
         ax.legend(frameon=False, fontsize=8, ncol=2)
     fig.suptitle("Continual learning sub-areas over time (rule-based tags, see validation/)",
                  x=0.01, ha="left", fontsize=11)
-    fig.text(0.01, 0.01, f"focused corpus, n = {tagged.filter(pl.col('has_abstract')).height:,} works with abstract | "
+    fig.text(0.01, 0.01, f"focused corpus, n = {tagged.filter(pl.col('in_analysis') & pl.col('has_abstract')).height:,} works with abstract | "
              f"{x[-1]} partial", fontsize=7, color="#666")
     fig.tight_layout(rect=(0, 0.03, 1, 0.95))
     C.FIGURES.mkdir(parents=True, exist_ok=True)

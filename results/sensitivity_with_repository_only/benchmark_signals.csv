@@ -1,0 +1,21 @@
+benchmark,family,mention,cite,both,either,has_cite_anchor
+Permuted MNIST,MNIST-scale,51,0,0,51,false
+Split/Rotated MNIST,MNIST-scale,78,0,0,78,false
+MNIST (any),MNIST-scale,317,76,9,384,true
+SVHN,MNIST-scale,33,125,13,145,true
+CIFAR-10/100,CIFAR,705,891,196,1400,true
+Tiny/mini-ImageNet,ImageNet-scale,237,0,0,237,false
+ImageNet (full/subset),ImageNet-scale,235,1025,117,1143,true
+ImageNet-R/A,pre-trained era,49,142,15,176,true
+DomainNet,pre-trained era,22,87,12,97,true
+CUB-200,pre-trained era,123,135,29,229,true
+VTAB,pre-trained era,4,7,0,11,true
+CORe50,CL-native,71,84,14,141,true
+CLEAR / Stream-51,CL-native,5,20,0,25,true
+COCO / VOC / ADE20K,detection & segmentation,149,249,75,323,true
+Atari / Meta-World,RL,29,47,7,69,true
+Text classification,NLP & LLM,21,27,0,48,true
+GLUE,NLP & LLM,13,31,5,39,true
+SuperNI / TRACE,NLP & LLM,10,10,0,20,true
+MMLU / GSM8K,NLP & LLM,26,5,0,31,true
+VQA / CoIN,NLP & LLM,31,1,0,32,true

@@ -1,11 +1,26 @@
 """Corpus definition and paths. Change the query here, nowhere else."""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "raw" / "openalex"
 PROCESSED = ROOT / "data" / "processed"
-RESULTS = ROOT / "results"
-FIGURES = ROOT / "figures"
+
+# Works that exist ONLY on a general-purpose deposit repository are left out of
+# the analysis corpus. These repositories accept any upload without moderation;
+# arXiv, bioRxiv/medRxiv and institutional repositories (which mirror published
+# work) are kept. A work also found on a journal, conference, arXiv or any other
+# source, in any OpenAlex location or any record of its dedup cluster, is kept.
+# Rule added on 2026-10-20 AFTER seeing the 2026 anomaly (Zenodo: 3 focused works
+# in 2024, 319 in 2026, 45% of them from 10 authors), so it is not pre-registered:
+# every headline number is re-run without it (make sensitivity).
+GENERIC_REPOSITORIES = (r"(?i)zenodo|ssrn|research square|preprints\.org|osf preprints|figshare|"
+                        r"authorea|qeios|techrxiv")
+INCLUDE_REPOSITORY_ONLY = os.environ.get("CLBIB_INCLUDE_REPOSITORY_ONLY") == "1"
+
+_OUT = ROOT / "results" / "sensitivity_with_repository_only" if INCLUDE_REPOSITORY_ONLY else None
+RESULTS = _OUT or ROOT / "results"
+FIGURES = (_OUT / "figures") if _OUT else ROOT / "figures"
 
 MAILTO = "arthur.nunes6889@gmail.com"  # OpenAlex polite pool
 OPENALEX = "https://api.openalex.org/works"
@@ -45,11 +60,11 @@ KEEP_TYPES = {"article", "conference-paper", "preprint", "review", "book-chapter
 MIN_YEAR = 1985
 
 # Works found ONLY by the "lifelong learning" query need extra evidence of ML.
-# Measured 2026-10-19: of 6,201 lifelong-only CS works, the top topics were AI in
-# Education, digital literacy, e-learning and MOOCs (subfield Information Systems
-# = 4,189). Gate: an ML term AND (AI/CV subfield OR no education term).
-# Spot check: ~532 kept, mostly ML; known misses e.g. "Lifelong Learning by
-# Adjusting Priors". Recall cost is measured in F2.
+# Measured 2026-10-19 on an early partial fetch: of 6,201 lifelong-only CS works,
+# the top topics were AI in Education, digital literacy, e-learning and MOOCs
+# (subfield Information Systems = 4,189). Gate: an ML term AND (AI/CV subfield OR
+# no education term). On the full snapshot: 7,002 lifelong-only works, 603 pass.
+# Known misses e.g. "Lifelong Learning by Adjusting Priors".
 LIFELONG_ML_TERMS = (r"(?i)forget|neural|deep learning|reinforcement|\bagent|robot|replay|plasticity|"
                      r"incremental|knowledge transfer|meta-learning|sequence of tasks|sequential tasks|"
                      r"new tasks|previous tasks|non-stationary|lifelong (machine|reinforcement|robot)")

@@ -1,0 +1,26 @@
+metric,main,with_repository_only,difference
+"focused works, 2022",756.0,761.0,5.0
+"focused works, 2025",2112.0,2207.0,95.0
+"focused works, 2026 (partial)",2133.0,2543.0,410.0
+growth 2022 -> 2025 (x),2.794,2.9,0.106
+"arXiv share of focused, 2019",0.574,0.574,0.0
+"arXiv share of focused, 2025",0.375,0.361,-0.015
+"PEFT/LLM share, 2019",0.025,0.025,0.0
+"PEFT/LLM share, 2022",0.071,0.071,0.0
+"PEFT/LLM share, 2025",0.292,0.293,0.001
+"PEFT/LLM share, 2026",0.39,0.394,0.004
+"replay share, 2025",0.304,0.302,-0.002
+"regularization share, 2025",0.287,0.286,-0.001
+"China share, 2023-2026",0.528,0.528,-0.0
+"US share, 2023-2026",0.18,0.179,-0.001
+"company author, 2019",0.24,0.24,0.0
+"company author, 2026",0.083,0.08,-0.003
+"company author, PEFT/LLM vs rest (x)",1.67,1.66,-0.01
+Brazil works,32.0,32.0,0.0
+"benchmark mix: MNIST-scale, 2018",0.468,0.468,0.0
+"benchmark mix: MNIST-scale, 2023",0.125,0.129,0.004
+"benchmark mix: MNIST-scale, 2026",0.18,0.202,0.021
+"benchmark mix: pre-trained era, 2025",0.247,0.246,-0.001
+"benchmark mix: NLP & LLM, 2026",0.112,0.14,0.028
+"benchmark mix: CIFAR, 2026, mention only",0.558,0.536,-0.022
+"benchmark mix: MNIST-scale, 2026, mention only",0.239,0.262,0.023

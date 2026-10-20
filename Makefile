@@ -1,9 +1,9 @@
 PY := .venv/bin/python
 RUN := PYTHONPATH=src $(PY) -m
 
-.PHONY: all fetch clean growth subareas validate test refetch
+.PHONY: all fetch clean growth subareas validate networks benchmarks sensitivity test refetch
 
-all: fetch clean growth subareas validate
+all: fetch clean growth subareas validate networks benchmarks sensitivity
 
 fetch:
 	$(RUN) clbib.fetch
@@ -34,3 +34,19 @@ validate:
 
 test:
 	PYTHONPATH=src $(PY) -m unittest discover -s tests -v
+
+networks:
+	$(RUN) clbib.networks
+
+benchmarks:
+	$(RUN) clbib.benchmarks
+
+# Same analyses with repository-only works kept (results/sensitivity_with_repository_only/),
+# then results/sensitivity.csv compares the headline numbers.
+sensitivity:
+	CLBIB_INCLUDE_REPOSITORY_ONLY=1 $(RUN) clbib.growth
+	CLBIB_INCLUDE_REPOSITORY_ONLY=1 $(RUN) clbib.subareas
+	CLBIB_INCLUDE_REPOSITORY_ONLY=1 $(RUN) clbib.networks
+	CLBIB_INCLUDE_REPOSITORY_ONLY=1 $(RUN) clbib.benchmarks
+	$(RUN) clbib.subareas
+	$(RUN) clbib.sensitivity

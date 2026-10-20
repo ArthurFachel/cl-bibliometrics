@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import polars as pl  # noqa: E402
 
 from . import config as C  # noqa: E402
+from .corpus import analysis  # noqa: E402
 
 
 def fetched_on() -> date:
@@ -28,7 +29,7 @@ def fetched_on() -> date:
 
 def main() -> None:
     works = pl.read_parquet(C.PROCESSED / "works.parquet")
-    final = works.filter(pl.col("in_scope") & pl.col("is_canonical"))
+    final = works.filter(analysis())
     snap = fetched_on()
 
     by_year = (final.group_by("first_year")

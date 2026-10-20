@@ -56,6 +56,14 @@ def is_arxiv(w: dict) -> bool:
     return False
 
 
+def generic_repo_only(w: dict) -> bool:
+    """True when every known source of the work is a general-purpose deposit repository."""
+    names = [((loc or {}).get("source") or {}).get("display_name") for loc in (w.get("locations") or [])]
+    names.append(((w.get("primary_location") or {}).get("source") or {}).get("display_name"))
+    names = [n for n in names if n]
+    return bool(names) and all(re.search(C.GENERIC_REPOSITORIES, n) for n in names)
+
+
 def load_raw() -> dict[str, dict]:
     works: dict[str, dict] = {}
     for qdir in sorted(p for p in C.RAW.iterdir() if p.is_dir()):
@@ -109,7 +117,8 @@ def main() -> None:
             "publication_date": w.get("publication_date"), "type": w.get("type"),
             "language": w.get("language"), "is_retracted": bool(w.get("is_retracted")),
             "source": src.get("display_name"), "source_type": src.get("type"),
-            "is_arxiv": is_arxiv(w), "cited_by_count": w.get("cited_by_count") or 0,
+            "is_arxiv": is_arxiv(w), "generic_repo_only": generic_repo_only(w),
+            "cited_by_count": w.get("cited_by_count") or 0,
             "field": ((pt.get("field") or {}).get("display_name")),
             "subfield": ((pt.get("subfield") or {}).get("display_name")),
             "topic": pt.get("display_name"),
@@ -149,6 +158,8 @@ def main() -> None:
          & pl.col("publication_year").is_between(C.MIN_YEAR, this_year)).alias("in_scope")
     )
     df = dedupe(df)
+    # repository-only at cluster level: no record of the work appears anywhere else
+    df = df.with_columns(pl.col("generic_repo_only").all().over("cluster_id").alias("repository_only"))
     df = df.with_columns(
         (pl.col("title").fill_null("").str.contains(C.FOCUS_TERMS)
          | (pl.col("abstract").fill_null("").str.count_matches(C.FOCUS_TERMS) >= C.FOCUS_MIN_ABSTRACT_HITS)
@@ -162,7 +173,8 @@ def main() -> None:
     final = df.filter(pl.col("in_scope") & pl.col("is_canonical"))
     print(f"raw works: {df.height} | in scope: {df['in_scope'].sum()} | "
           f"canonical in scope: {final.height} | merged duplicates: {df['in_scope'].sum() - final.height} | "
-          f"focused: {final['is_focused'].sum()}")
+          f"focused: {final['is_focused'].sum()} | "
+          f"focused, repository-only: {(final['is_focused'] & final['repository_only']).sum()}")
     print(f"authorship rows: {len(auths)} | reference edges: {len(refs)}")
 
 

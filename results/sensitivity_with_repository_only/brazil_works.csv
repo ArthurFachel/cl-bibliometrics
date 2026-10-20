@@ -1,0 +1,33 @@
+work_id,br_institutions,partner_countries,first_year,title,peft_llm,cited_by_count
+https://openalex.org/W2532443347,Universidade de São Paulo,GB,2016,One-Class to Multi-Class Model Update Using the Class-Incremental Optimum-Path Forest Classifier,false,3
+https://openalex.org/W3045042590,Universidade Estadual de Campinas (UNICAMP),FR,2020,PODNet: Pooled Outputs Distillation for Small-Tasks Incremental Learning,false,710
+https://openalex.org/W3037416150,Universidade Estadual de Campinas (UNICAMP),FR,2021,Insights from the Future for Continual Learning,false,10
+https://openalex.org/W4312421172,Universidade Federal de Pernambuco,FR,2022,Real-Time Class-Incremental Learning for Voice Command Recognition via Adaptive oiSGNG,false,0
+https://openalex.org/W4366310529,Universidade Federal de Pernambuco,"",2022,Convolutional Decoupled cVAE-GANs for Pseudo-Replay Based Continual Learning,false,2
+https://openalex.org/W4392402516,Instituto de Pesquisas Eldorado; Universidade de São Paulo,"",2024,Efficient Parameter Mining and Freezing for Continual Object Detection,false,3
+https://openalex.org/W4401478512,Universidade Federal do Amazonas,"",2024,Catastrophic Forgetting in Deep Learning: A Comprehensive Taxonomy,false,54
+https://openalex.org/W4401701393,Universidade Estadual Paulista (Unesp),"",2024,Class Incremental Deep Learning: A Computational Scheme to Avoid Catastrophic Forgetting in Domain Generation Algorithm Multiclass Classification,false,0
+https://openalex.org/W4402135519,Universidade Federal de Pernambuco,CA,2024,Robust Handwritten Signature Representation with Continual Learning of Synthetic Data over Predefined Real Feature Space,false,5
+https://openalex.org/W4403069763,Universidade Estadual de Campinas (UNICAMP),CA,2024,BiasPruner: Debiased Continual Learning for Medical Image Classification,false,11
+https://openalex.org/W4403938160,Universidade Federal de Santa Catarina,IT,2024,Continual Learning in Recurrent Neural Networks for the Internet of Things: A Stochastic Approach,false,3
+https://openalex.org/W4404525247,Universidade Estadual de Campinas (UNICAMP),"",2024,Improving Task-Incremental Human Activity Recognition with Plasticity Techniques,false,0
+https://openalex.org/W4405209164,Pontifícia Universidade Católica do Paraná,CA,2024,Alleviating Catastrophic Forgetting in Facial Expression Recognition with Emotion-Centered Models,false,0
+https://openalex.org/W4406266805,IBM Research - Brazil; Universidade Federal do Estado do Rio de Janeiro,"",2024,Towards Continual Federated Learning of Monocular Depth for Autonomous Vehicles,false,1
+https://openalex.org/W4407941642,Universidade do Estado do Amazonas,"CN, ES",2025,Personalized Federated Learning with Progressive Local Training Strategy and Lightweight Classifier,false,2
+https://openalex.org/W4410849805,Universidade Federal do Pará,"",2025,ALFadapt: Mitigating Catastrophic Forgetting in Federated Learning,false,0
+https://openalex.org/W4410888271,SENAI Innovation Institute for Embedded Systems; Serviço Nacional de Aprendizagem Industrial,"IT, US",2025,Incremental and Decremental Continual Learning for Privacy-Preserving Video Recognition,false,1
+https://openalex.org/W7118172480,Universidade Federal de Pernambuco,"",2025,Incremental learning approach using fuzzy logic to mitigate catastrophic forgetting,false,0
+https://openalex.org/W7125893847,Universidade Estadual de Campinas (UNICAMP),"",2025,Advancing Human Activity Recognition with Meta-Learning for Continual Learning,false,0
+https://openalex.org/W7126246720,Universidade Federal do Rio Grande do Norte,US,2025,The Need for More Nuanced Metrics of Catastrophic Forgetting,false,0
+https://openalex.org/W7128055605,Universidade Federal de Lavras; Universidade Federal do ABC,CA,2025,Zero-Day Device Identification for IoT Security through Optimized Incremental Learning and Drift Adaptation,false,0
+https://openalex.org/W7134897869,Universidade Federal de Minas Gerais,CA,2026,Locally Linear Continual Learning for Time Series Based on VC-Theoretical Generalization Bounds,false,0
+https://openalex.org/W7138997937,Universidade Federal do Rio Grande do Norte,US,2026,New Metrics for Disambiguating Feature Overlap and Catastrophic Forgetting in Incremental Learning Contexts (Student Abstract),false,0
+https://openalex.org/W7161120968,Pontifícia Universidade Católica do Rio Grande do Sul,"",2026,Low-Rank Adapters Initialization via Gradient Surgery for Continual Learning,true,0
+https://openalex.org/W7166502806,Pontifícia Universidade Católica do Rio Grande do Sul,"",2026,Continual Learning for Sequential Personalization of Small Language Models: A Stability Monitoring Analysis,true,0
+https://openalex.org/W7168145767,Universidade Federal do Amazonas,NZ,2026,Overcoming catastrophic forgetting in continuous image classification tasks with adapters,true,0
+https://openalex.org/W7203592725,Universidade Federal de Alagoas,"",2026,M³-CIL:A Multidimensional Evaluation Protocol for Class-Incremental Learning,false,0
+https://openalex.org/W7213432811,Universidade Federal de Minas Gerais,"",2026,One-Shot Federated Class-Incremental Learning for Medical Imaging via Variational Feature Transfer,false,0
+https://openalex.org/W7215036607,Instituto Federal da Bahia; Universidade Federal da Bahia,"",2026,An Empirical Study on the Effects of Missing Labels in Online Continual Learning,false,0
+https://openalex.org/W7216400291,Centro Brasileiro de Pesquisas Físicas; Universidade Federal do Estado do Rio de Janeiro; Universidade do Estado do Rio de Janeiro,"AM, BE, CZ, DE, GE, HU, IN, KR, LT, TR, US",2026,Continual learning via ensemble-based depth-wise masked autoencoders for data quality monitoring in high-energy physics,false,0
+https://openalex.org/W7221033270,Universidade Federal de Ouro Preto,"",2026,HCPN-GCN: Scaling Hierarchical Prototype Networks with Cone Geometry for Continual Graph Learning,false,0
+https://openalex.org/W7222346645,Universidade Federal de Ouro Preto; Vale (Brazil),DE,2026,PLC-Embedded Virtual Pressure Sensor with Continual Learning for Mining Tailings Pumping,false,0
