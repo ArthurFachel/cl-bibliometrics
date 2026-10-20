@@ -1,0 +1,13 @@
+label,support,tp,fp,fn,precision,recall,f1
+replay,31,24,7,7,0.77,0.77,0.77
+regularization,32,23,6,9,0.79,0.72,0.75
+architecture,30,15,10,15,0.6,0.5,0.55
+optimization,6,4,1,2,0.8,0.67,0.73
+peft_llm,20,18,3,2,0.86,0.9,0.88
+plasticity,5,0,1,5,0.0,0.0,
+theory,7,5,0,2,1.0,0.71,0.83
+survey_benchmark,17,9,0,8,1.0,0.53,0.69
+online,24,12,7,12,0.63,0.5,0.56
+federated,4,4,0,0,1.0,1.0,1.0
+rl,10,10,0,0,1.0,1.0,1.0
+application,39,28,15,11,0.65,0.72,0.68

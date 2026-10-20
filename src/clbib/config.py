@@ -59,9 +59,9 @@ LIFELONG_AI_SUBFIELDS = {"Artificial Intelligence", "Computer Vision and Pattern
 
 # "Focused" corpus: CL must be the topic, not a passing mention. Rule = a CL term
 # in the title OR >= FOCUS_MIN_ABSTRACT_HITS mentions in the abstract.
-# On the 150-work validation sample (LLM labels, 2026-10-19) this raised corpus
-# precision from 0.77 to 0.95 at recall 0.87. Tuned on that same sample, so
-# treat as optimistic until the human review confirms it.
+# Tuned on the dev sample (LLM labels, 2026-10-19): corpus precision 0.77 -> 0.95
+# at recall 0.87. Frozen in 098968f and re-scored once on the disjoint test
+# sample: precision 0.94, recall 0.93.
 FOCUS_TERMS = (r"(?i)continual(ly)? learn|catastrophic(ally)? forget|class-incremental|task-incremental|"
                r"domain-incremental|lifelong (machine |reinforcement )?learn|incremental learning|"
                r"continual (pre-?training|fine-?tuning|adaptation|instruction)|forgetting")
