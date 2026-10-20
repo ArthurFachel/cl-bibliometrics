@@ -1,0 +1,384 @@
+id,first_year,title,abstract,cn,us,gb,de,kr,in,it,sg,au,ca,hk,fr,jp,br,other,notes,model
+https://openalex.org/W4293082518,2022,(affiliations),"College of Information and Communication Engineering Harbin Engineering University  Harbin China
+Key Laboratory of Advanced Marine Communication and Information Technology Ministry of Industry and Information Technology  Harbin China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations clearly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312542089,2022,(affiliations),"&#x00C9;cole de technologie sup&#x00E9;rieure,Laboratoire d&#x0027;imagerie, de vision et d&#x0027;intelligence artificielle (LIVIA),Montreal,Canada
+Vellore Institute of Technology,Vellore,India
+Genetec Inc.,Montreal,Canada",0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,Canada and India are explicitly stated in affiliations.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4417097558,2026,(affiliations),"University of Science and Technology of China
+China University of Mining and Technology",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations are clearly in mainland China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4392121983,2024,(affiliations),"College of Oceanography and Space Informatics, China University of Petroleum (East China), Qingdao, China
+School of Electronic Information and Communications, Huazhong University of Science and Technology, Wuhan, China
+Laboratory of Marine Physics and Remote Sensing, First Institute of Oceanography, Ministry of Natural Resources, Qingdao, China
+College of Control Science and Engineering, China University of Petroleum (East China), Qingdao, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4386450809,2023,(affiliations),"Jiangsu Automation Research Institute,Lianyungang,Jiangsu,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4386159843,2023,(affiliations),"Nanjing University,National Key Laboratory for Novel Software Technology",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Nanjing University is in China (mainland).,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4220814659,2022,(affiliations),"Galgotias University,Greater Noida,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,India is explicitly stated in the affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4404479779,2024,(affiliations),"School of Advanced Technology, Xi&#x2019;an Jiaotong-Liverpool University, Suzhou, China
+Department of Information Science and Engineering, Wuhan University of Science and Technology, Wuhan, China
+Department of Computer Science, Brunel University London, Uxbridge, U.K.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,First affiliation explicitly states China; third affiliation states U.K. (United Kingdom).,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4210768747,2022,(affiliations),"Chinese Academy of Sciences and University of Chinese Academy of Sciences, Beijing, China
+Chinese Academy of Sciences, Beijing, China
+Carleton University, Ottawa, Canada",1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3157976823,2021,(affiliations),"Department of Computer Science, Yangzhou University, Yangzhou, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4409660384,2025,(affiliations),"Institute of Engineering and Technology,Department of CSE-IoT Poornima,Jaipur,India
+Jagannath University,Department of Engineering &#x0026; Technology,Jaipur,India
+JECRC University,Department of Computer science,Jaipur,Rajasthan,India
+CIITM,Department of CSE,Jaipur,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,All affiliations clearly state India.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7206176826,2026,(affiliations),"Politecnico di Milano
+Nokia
+Orange Polska",0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,"Politecnico di Milano is in Italy. Nokia is vague (could be Finland or other), ignored. Orange Polska is in Poland, mapped to 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4401208806,2024,(affiliations),"Dept. of Computational Linguistics, Heidelberg University, Germany. fu@cl.uni-heidelberg.de
+Dept. of Computational Linguistics, Heidelberg University, Germany. frank@cl.uni-heidelberg.de",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state Germany.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4294691125,2022,(affiliations),"School of Electronic Engineering, Xidian University, Xi&#x2019;an, China
+Alibaba Group, Beijing, China
+UBTECH Sydney Artificial Intelligence Centre and the Faculty of Engineering, School of Computer Science, The University of Sydney, Darlington, NSW, Australia",1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,China and Australia clearly identified; no other countries.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312702169,2022,(affiliations),"University of Texas at San Antonio,Neuromorphic AI Lab,TX,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,USA clearly indicated in affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4401416949,2024,(affiliations),"Xi&#x2019;an Jiaotong University,Institute of Artificial Intelligence and Robotics,Xi&#x2019;an,China,710049",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Xi'an Jiaotong University in Xi'an, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3207572704,2021,(affiliations),"Behavox,Montreal,Canada",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,Affiliation clearly states Canada.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4388726194,2023,(affiliations),"Electrical and Computer Engineering, Western University,London,Canada",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,Canada is explicitly stated in the affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7152517859,2026,(affiliations),"National Engineering Research Center for Big Data Technology and System, Service Computing Technology and System Lab, Cluster and Grid Computing Lab, School of Computer Science and Technology, Huazhong University of Science and Technology, Wuhan, China
+Futu Holdings Limited, Shenzhen, China
+Beijing Institute of Technology, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All three affiliations explicitly list China as the country.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4404849763,2024,(affiliations),"University of Toyama,Faculty of Engineering,Toyama,Japan,930-8555
+Kanazawa University,Faculty of Electrical, Information and Communication Engineering,Ishikawa,Japan,920-1192
+Wicresoft Co Ltd,Bellevue,WA,USA,98005",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,Japan and USA clearly identified; no other countries.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4395665946,2023,(affiliations),"Tsinghua University, Beijing, China
+Zhongguancun Laboratory, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4390971289,2023,(affiliations),"Northeastern University,College of Computer Science and Engineering,Shenyang,China
+Computing in Medical Image (MIIC) Ministry of Education,Key Laboratory of Intelligent,Shenyang,China
+National Frontiers Science Center for Industrial Intelligence and Systems Optimization,Shenyang,China,110819",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly mention China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W2977932430,2019,(affiliations),"College of Mathematics and Computer Science, Fuzhou University, Fuzhou, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3169089289,2021,(affiliations),"Nanyang Technological University,Singapore
+Monash University,Melbourne
+NVIDIA AI Technology Center (NVAITC),Singapore",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,Nanyang Technological University and NVIDIA AI Technology Center are in Singapore; Monash University is in Australia.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4391021373,2023,(affiliations),"Tsinghua University,Speech Processing and Machine Intelligence (SPMI) Lab,Beijing,China
+China Mobile Research Institute,Beijing,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations clearly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312386549,2022,(affiliations),"South China University of Technology,School of Computer Science and Engineering,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4385863749,2023,(affiliations),"College of Automation, Southeast University, Nanjing, China
+College of Intelligence and Computing, Tianjin University, Tianjin, China
+Suzhou Institute of Trade &amp; Commerce, Suzhou, China
+Suzhou University of Science and Technology, Suzhou, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7161738622,2026,(affiliations),"Intelligent Research Center, PipeChina Institute of Science and Technology, Tianjin 300450, China
+School of Artificial Intelligence, Tianjin University, Tianjin 300072, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Both affiliations explicitly list China, so cn=1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7160498863,2026,(affiliations),"Wangxuan Institute of Computer Technology, Peking University, Beijing, China
+Pengcheng Laboratory, Shenzhen, Guangdong, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415829871,2025,(affiliations),"State Key Laboratory of Fluid Power and Mechatronic Systems Zhejiang University  Hangzhou China
+Zhejiang Hengdao Technology Co. Ltd.  Shaoxing China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations clearly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415624632,2025,(affiliations),"Colorado State University,Department of Electrical and Computer Engineering,Fort Collins,CO,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4404955195,2024,(affiliations),"Chulalongkorn University,Faculty of Science,Department of Mathematics and Computer Science,Bangkok,Thailand",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Thailand, which is not in the listed countries, so mapped to 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4391549738,2023,(affiliations),"University of Electronic Science and Technology of China,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415539876,2025,(affiliations),"College of Computer Science and Technology, National University of Defense Technology, Changsha, China
+Strategic Assessments and Consultation Institute, Academy of Military Sciences, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4322710616,2022,(affiliations),"Fraunhofer Portugal AICOS,Porto,Portugal
+Research and Development Glartek,Leiria,Portugal",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Both affiliations are in Portugal, which is not in the listed countries, so 'other' is 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4385815544,2023,(affiliations),"Purdue University,West Lafayette,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7220951761,2026,(affiliations),"Xi'an Jiaotong University
+Jilin University, Changchun
+Nanyang Technological University",1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Xi'an Jiaotong University and Jilin University are in China; Nanyang Technological University is in Singapore.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7220435457,2026,(affiliations),"Jinan University
+Qinghai Normal University and the Key Laboratory of Tibetan Information Processing, Ministry of Education
+Georgia State University",1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Jinan University and Qinghai Normal University are in China; Georgia State University is in the United States.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4384625728,2023,(affiliations),"Baidu Research, Sammamish, WA, USA
+Baidu Research, Bellevue, WA, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4319303056,2023,(affiliations),"Beijing Institute of Remote Sensing Equipment, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4414539402,2025,(affiliations),"King&#x0027;s College London,Department of Engineering,London,United Kingdom",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states United Kingdom.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4412519200,2025,(affiliations),"Computer Science and Engineering, Rajiv Gandhi Institute of Petroleum Technology, Jais, Amethi
+Department of computer science and engineering, Indian Institute of Technology Patna
+Computer Science and Engineering, IIT Bombay",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,"All affiliations are clearly Indian institutions (Rajiv Gandhi Institute of Petroleum Technology, IIT Patna, IIT Bombay).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7105703142,2025,(affiliations),"Changsha University of Science and Technology,School of Computer and Technology,Changsha,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4390873804,2023,(affiliations),"Xi&#x2019;an Jiaotong University,College of Artificial Intelligence
+Xi&#x2019;an Jiaotong University,School of Software Engineering
+Huawei Technologies,ACS Lab,Shenzhen,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Xi'an Jiaotong University is in mainland China; Huawei is in Shenzhen, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4406326159,2025,(affiliations),"Rensselaer Polytechnic Institute
+University of California San Diego
+Purdue University, West Lafayette
+University of California at San Diego",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"All affiliations are US institutions: Rensselaer Polytechnic Institute, University of California San Diego, Purdue University, and University of California at San Diego.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3021227000,2020,(affiliations),АО «ИнфоВотч»,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Russian, likely Russia, which falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4394597640,2024,(affiliations),Amazon,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Amazon is a US-based company, so affiliation is placed in the United States.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4321487869,2023,(affiliations),"State Key Laboratory of Robotics, Shenyang Institute of Automation, Institutes for Robotics and Intelligent Manufacturing, Chinese Academy of Sciences, Shenyang, China
+National University of Defense Technology, Hefei, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly mention China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4410808656,2025,(affiliations),"School of Cyber Science and Engineering and the Key Laboratory of Data Protection and Intelligent Management, Ministry of Education, Sichuan University, Chengdu, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416251919,2025,(affiliations),"Indian Institute of Science,Department of Electrical Engineering,Bangalore,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Affiliation clearly states India.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4285102166,2022,(affiliations),"National University of Singapore,Singapore,117583
+Singapore Institute of Manufacturing Technology, Agency for Science, Technology and Research,Adaptive Robotics and Mechatronics Group,Singapore,138634
+The Hong Kong University of Science and Technology (Guangzhou),Robotics and Autonomous Systems Thrust,Guangzhou,China",1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,"The third affiliation is in Guangzhou, China (mainland). Hong Kong is not present; the institution name includes 'Hong Kong' but the location is Guangzhou, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4404393419,2024,(affiliations),"School of Communication & Information Engineering, Shanghai University, 99 Shangda Road, Baoshan District, Shanghai, P. R. China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Shanghai, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4404938439,2024,(affiliations),"Independent Researcher, Texas, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Texas, USA.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415708324,2025,(affiliations),"Tianjin University,College of Intelligence and Computing,Tianjin,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Tianjin, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4400908818,2024,(affiliations),"Bo&#x02D8;gazi&#x00E7;i &#x00DC;niversitesi,Bilgisayar M&#x00FC;hendisli&#x02D8;gi B&#x00F6;l&#x00FC;m&#x00FC;,&#x02D9;Istanbul,T&#x00FC;rkiye",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Istanbul, Turkey, which is not in the listed countries, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4405103598,2024,(affiliations),"Nexcepta,Gaithersburg,MD,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415428455,2025,(affiliations),Beijing University of Posts and Telecommunications,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Beijing University of Posts and Telecommunications is clearly in Beijing, China (mainland).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7134897869,2026,(affiliations),"Department of Electronic Engineering, Universidade Federal de Minas Gerais, UFMG, Belo Horizonte, Brazil
+Department of Computing Science, University of Alberta, Edmonton, Canada
+Graduate Program in Electrical Engineering, Universidade Federal de Minas Gerais, UFMG, Belo Horizonte, Brazil",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,Brazil and Canada are clearly stated.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7171307946,2026,(affiliations),"Palos Verdes Peninsula High School, 27118 Silver Spur Rd, Rolling Hills Estates, CA 90274, USA.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states USA in address.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312301875,2022,(affiliations),Hikvision Research Institute,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Hikvision is a Chinese company headquartered in Hangzhou, China, so the affiliation is located in mainland China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4321633354,2022,(affiliations),The Hong Kong Polytechnic University,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,Hong Kong is separate from mainland China per instructions.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4411551179,2025,(affiliations),"Ministry of Education College of Computer Science, Inner Mongolia University,Engineering Research Center of Ecological Big Data,Hohhot,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7171818660,2026,(affiliations),Tongji University,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Tongji University is in Shanghai, China (mainland).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4412985157,2025,(affiliations),"College of Oceanography and Space Informatics, China University of Petroleum (East China), Qingdao, China
+School of Electronic Information and Communications, Huazhong University of Science and Technology, Wuhan, China
+Marine Carbon Sink Research Center, Shandong Marine Resource and Environment Research Institute, Yantai, China
+School of Information and Electronics, Beijing Institute of Technology, Beijing, China
+School of Big Data and Computer Science, Guizhou Normal University, Guiyang, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"All affiliations explicitly state China, so only cn is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7129219341,2025,(affiliations),"Pune Institute of Computer Technology,Department of Information Technology,Pune,India
+Dr. Bapuji Salunkhe Institute of Engineering and Technology,Kolhapur,India
+DY Patil College of Engineering and Technology,Mechanical Engineering Department,Kolhapur,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,All affiliations explicitly mention India.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4413156672,2025,(affiliations),KAIST,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,"KAIST is the Korea Advanced Institute of Science and Technology, located in South Korea.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4379931410,2023,(affiliations),"College of Intelligence Science and Technology, National University of Defense Technology, Changsha, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4304086130,2022,(affiliations),"Indian Institute of Technology Bombay, Mumbai, India
+Oxford Brookes University, Oxford, United Kingdom",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402352616,2024,(affiliations),"Universidade da Coru&#x00F1;a,GII, CITIC Research Center,A Coru&#x00F1;a,Spain",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Spain, which is not in the listed countries, so 'other' is 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4386075549,2023,(affiliations),"ETS Montreal,LIVIA,Dept. of Systems Engineering,Canada",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,Canada is explicitly stated in the last affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4406457544,2025,(affiliations),"School of Mechanical and Aerospace Engineering, Nanyang Technological University, Jurong West, Singapore",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,"Nanyang Technological University is in Singapore, clearly stated.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7154127099,2026,(affiliations),"School of Software Engineering, Xi&#x2019;an Jiaotong University, Xi&#x2019;an, China
+Institute of Artificial Intelligence and Robotics, State Key Laboratory of Human-Machine Hybrid Augmented Intelligence, Xi&#x2019;an Jiaotong University, Xi&#x2019;an, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4417077998,2026,(affiliations),"Stanford University,Dept. of Electrical Engineering,Stanford,CA,USA
+University of Oklahoma,School of Computer Science,Norman,OK,USA
+Purdue University,Weldon School of Biomedical Engineering,West Lafayette,IN,USA
+University of Glasgow,College of Science and Engineering,Glasgow,UK",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,USA and UK clearly identified; no other countries.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4403990225,2024,(affiliations),"Kim Jaechul Graduate School of AI, KAIST, Seoul, South Korea",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,"KAIST is in South Korea, clearly stated.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408353235,2025,(affiliations),"Fudan University,School of Computer Science,Shanghai,China
+Donghua University,School of Computer Science and Technology",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416926010,2025,(affiliations),"Department of IoT and Information Engineering, School of Engineering, King Mongkut&#x2019;s Institute of Technology Ladkrabang, Bangkok, Thailand",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Thailand, which is not in the listed countries, so classified as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3195897026,2021,(affiliations),"Univeristy of Oulu,Finland",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Finland is not in the listed countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4414242887,2025,(affiliations),"Department of Industrial Engineering and Engineering Management, College of Engineering, University of Sharjah , ,
+Department of Industrial and Systems Engineering, The Hong Kong Polytechnic University , ,
+Management Science and Engineering Department, Khalifa University , ,
+School of Economics and Management, Fuzhou University , ,",1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,"University of Sharjah is in UAE (other), Hong Kong Polytechnic University is in Hong Kong (hk), Khalifa University is in UAE (other), Fuzhou University is in China (cn).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4296704881,2022,(affiliations),"School of Information and Communication Engineering, University of Electronic Science and Technology of China, Chengdu, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7130352717,2025,(affiliations),"Shenzhen Institute of Advanced Technology Chinese Academy of Sciences,Shenzhen,China
+School of and Microelectronics Shenzhen University of Advanced Technology,Shenzhen,China
+City University of Hong Kong,Department of Computer Science,Hong Kong,China
+Faculty of Science and Technology University of Macau,Macau,China
+Intelligence Science and Engineering Harbin Institute of Technology(Shenzhen),Shenzhen,China",1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,"City University of Hong Kong counted as hk, University of Macau counted as other (Macau separate from cn).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7134803399,2026,(affiliations),"Politecnico di Torino
+VERSES AI Inc.
+Chips-IT Foundation",0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,"Politecnico di Torino is in Italy; VERSES AI Inc. is a US company; Chips-IT Foundation is unclear but likely US-based, ignored as vague.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402917164,2024,(affiliations),"Fujitsu R&#x0026;D Center, Co., LTD
+Fujitsu LTD",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"Fujitsu is a Japanese company, so both affiliations are in Japan.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4294438083,2022,(affiliations),"Deeplab, Greece and Dept. of Algorithms and Data Science, Taboola.com, Israel
+DeepLab, Greece and Dept. of Algorithms and Data Science, Taboola.com, Israel
+Dept. of Algorithms and Data Science, Taboola.com, Israel",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Greece and Israel are not in the specified country list, so they fall under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7140092193,2025,(affiliations),"Shenzhen Power Supply Bureau Co., Ltd.,Shenzhen,China,518000",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7165205732,2026,(affiliations),"New York University,Center for Cyber Security,Abu Dhabi,UAE",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,"New York University is US-based, but the affiliation specifies Abu Dhabi, UAE, so UAE counts as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4294068740,2022,(affiliations),"School of Engineering, Huzhou University, Huzhou, China
+School of Automation and Electrical Engineering, Zhejiang University of Science and Technology, Hangzhou, China
+State Key Laboratory of Industrial Control Technology and the College of Control Science and Engineering, Zhejiang University, Hangzhou, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7164179515,2026,(affiliations),"Bio10, Australia
+Bio10, Dubai, UAE",0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,Australia and UAE are clearly stated.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7131119996,2025,(affiliations),"Boston University,USA
+Korea University,South Korea",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4385805259,2023,(affiliations),"University of Padova,Italy",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,"University of Padova is clearly in Italy, as stated.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4319779301,2022,(affiliations),"Reveal,Chicago,IL",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Reveal is a company based in Chicago, IL, USA; city and state confirm US location.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3152862831,2021,(affiliations),"KU,Leuven",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"KU Leuven is in Belgium, which is not in the list of specified countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402754092,2024,(affiliations),"School of Life Sciences, IDG/McGovern Institute for Brain Research, Tsinghua University
+Institute for AI, BNRist Center, Tsinghua-Bosch Joint ML Center, Tsinghua University,THBI Lab,Dept. of Comp. Sci. &#x0026; Tech.
+Institute for Interdisciplinary Information Sciences, Tsinghua University",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"All affiliations are from Tsinghua University, which is located in Beijing, China (mainland).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4289927973,2022,(affiliations),"Politecnico di Milano,Dipartimento di Elettronica, Informazione e Bioingegneria,Milano,Italy,20133",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,Affiliation clearly states Italy.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4200019856,2021,(affiliations),"Dalarna University,Department for MicroData Analytics,Falun,Sweden",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Sweden is not in the listed countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7162008012,2026,(affiliations),"Massachusetts Institute of Technology, Cambridge, MA, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7160606814,2026,(affiliations),"Saveetha School of Engineering, Saveetha Institute of Medical and Technical Science,Computer Science and Engineering,Thandalam,Tamil Nadu,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Affiliation clearly states India.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3163939464,2022,(affiliations),"LAMP Team, Computer Vision Center, Barcelona, Spain
+Media Integration and Communication Center, Florence, Italy",0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,"Spain is not in the specified country list, so it is counted as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402352196,2024,(affiliations),"Toyota Central R&amp;D Labs., Inc.,Aichi,Japan",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Affiliation clearly states Japan.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7168235316,2026,(affiliations),"Beijing Foreign Studies University
+Beijing Jiaotong University
+UiT The Arctic University of Norway",1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Beijing Foreign Studies University and Beijing Jiaotong University are in China (mainland). UiT The Arctic University of Norway is in Norway, which falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4285288788,2022,(affiliations),"Department of Information Technology, RCC Institute of Information Technology, Kolkata, India
+Department of Computer Science and Engineering, Jadavpur University, Kolkata, India
+Center for Basic and Applied Science, Faculty of Informatics and Management, University of Hradec Kr&#x00E1;lov&#x00E9;, Hradec Kralove, Czech Republic",0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,India appears in first two affiliations; Czech Republic is 'other'.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4387623784,2023,(affiliations),"Institute for Infocomm Research (I<sup>2</sup>R), A* Star, Singapore
+Salesforce Research Asia, Singapore
+Singapore Management University, Singapore",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,All affiliations explicitly mention Singapore.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4366957596,2023,(affiliations),"School of Electronic and Information Engineering, Beihang University, Beijing, China
+Cyber and Big Data Research Laboratory, Edinburgh Napier University, Edinburgh, U.K.
+Department of Informatics, University of Leicester, Leicester, U.K.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7140280489,2026,(affiliations),"College of Electronic Engineering, National University of Defense Technology, Hefei, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408324688,2024,(affiliations),"University of Electronic Science and Technology of China,School of Computer Science and Engineering,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4366985339,2023,(affiliations),"Hangzhou Innovation Institute, Beihang University, China
+State Key Lab of Virtual Reality Technology and Systems, Beihang University, China
+ShiFang Technology Inc., China
+College of Information Engineering, China Jiliang University, China
+Hikvision Research Institute, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415821474,2025,(affiliations),"Pillar of Engineering Systems and Design, Singapore University of Technology and Design, Tampines, Singapore
+Internet of Things Thrust, The Hong Kong University of Science and Technology, Guangzhou, China",1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,"Singapore University of Technology and Design is in Singapore; Hong Kong University of Science and Technology (Guangzhou campus) is in China, but the affiliation explicitly mentions Hong Kong in the name, so hk=1; Guangzhou is in mainland China, so cn=1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W2978133404,2019,(affiliations),"Department of Information Technology, Ministry of Natural Resources and Environment (MONRE), 10, Ton That Thuyet, Cau Giay, Hanoi, Vietnam
+Vietnam National University, Hanoi (VNU), University of Engineering and Technology (UET), 144, Xuan Thuy, Cau Giay, Hanoi, Vietnam",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Both affiliations are in Vietnam, which is not in the specified list, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4406356715,2024,(affiliations),"Wuhan Institute of Technology,School of Computer Science and Engineering,Wuhan,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4405945823,2024,(affiliations),"Electrical Engineering, Indian Institute of Technology Bombay, Mumbai, Maharashtra, India
+Monash University, Melbourne, Australia",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,India and Australia clearly stated.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4405234647,2024,(affiliations),"Department of Computer Science, American University, Washington, DC 20016, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Only USA is identified from the affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4414458839,2025,(affiliations),"Jiangsu Institute of Automation,Lianyungang,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7105657809,2025,(affiliations),"Qilu University of Technology (Shandong Academy of Sciences),Key Laboratory of Computing Power Network and Information Security, Ministry of Education, Shandong Computer Science Center (National Supercomputer Center in Jinan),Jinan,China,250014",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China in the address.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4413120418,2025,(affiliations),"Department of Electrical Engineering, Faculty of Engineering, Universiti Malaya, Kuala Lumpur, Malaysia
+Department of Mechanical Engineering, Faculty of Engineering, Universiti Malaya, Kuala Lumpur, Malaysia",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Both affiliations are in Malaysia, which is not in the specified list, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4224916880,2022,(affiliations),"Institute for Infocomm Research (I2R),Singapore,138632",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Affiliation clearly states Singapore.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7124146944,2025,(affiliations),"Beijing Institute of Technology,Beijing,China
+Northeastern University,Shenyang,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408354056,2025,(affiliations),"University of Electronic Science and Technology of China,Chengdu,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7131136608,2025,(affiliations),"Yonsei University
+Sogang University
+Carnegie Mellon University",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,Yonsei University and Sogang University are in South Korea (kr); Carnegie Mellon University is in the United States (us).,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4403364834,2025,(affiliations),University of Oxford,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,University of Oxford is in the United Kingdom.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4394625847,2024,(affiliations),"ETS Montreal
+Thales Digital Solutions",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"ETS Montreal is in Canada; Thales Digital Solutions is vague but likely France-based, but ignored due to lack of city/country.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4411203695,2025,(affiliations),"College of Computing and Data Science, Nanyang Technological University, Singapore
+School of Engineering, Institute of Science Tokyo, Tokyo, Japan",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,Singapore and Japan are explicitly stated.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7159870493,2026,(affiliations),"Pune Institute of Computer Technology (PICT),Department of Computer Engineering,Pune,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Affiliation clearly states India.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7126379625,2026,(affiliations),"School of Geosciences and Info-Physics, Central South University, Changsha 410083, China
+Chongqing Geomatic and Remote Sensing Center, Chongqing 401147, China
+Beijing Institute of Tracking and Telecommunications Technology, Beijing 100094, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All three affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7214113104,2026,(affiliations),South China University of Technology,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"South China University of Technology is located in Guangzhou, China (mainland).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4323240375,2023,(affiliations),"Advanced Research Lab, NavInfo Europe, Eindhoven, The Netherlands, --- Select a Country ---
+Department of Mathematics and Computer Science, Eindhoven University of Technology, The Netherlands, --- Select a Country ---",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Both affiliations are in the Netherlands, which is not in the list of specified countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4281912926,2022,(affiliations),"Hong Kong University of Science and Technology, Hong Kong, China
+Shanghai Jiao Tong University, Shanghai, China",1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,Hong Kong is listed separately from China per instructions; both affiliations are clearly located in China/Hong Kong.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4386736782,2023,(affiliations),"Department of Informatics, Knowledge Technology Group, University of Hamburg, Hamburg, Germany",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states Germany.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4400579668,2024,(affiliations),"College of Computing, Georgia Institute of Technology,Atlanta,GA,USA,30332
+Woodruff School of Mechanical Engineering, Georgia Institute of Technology,Atlanta,GA,USA,30332",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Both affiliations clearly state USA, so only United States is present.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4403421070,2024,(affiliations),"Harbin Institute of Technology,China
+Shanghai Pudong Development Bank,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations clearly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7203443104,2026,(affiliations),Ministry of Education,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Ministry of Education is ambiguous, but likely refers to China's Ministry of Education given common usage in academic contexts; no other affiliations provided.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4401990301,2024,(affiliations),"Southwestern University of Finance and Economics, Chengdu, China
+School of Computing and Artificial Intelligence, Southwestern University of Finance and Economics, Chengdu, China
+College of Computer Science, Sichuan University, Chengdu, China
+JD Intelligent Cities Research, Beijing, China
+School of Computing and Artificial Intelligence, Southwest Jiaotong University, Chengdu, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"All affiliations explicitly mention China, so only cn is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415872074,2025,(affiliations),"National Key Laboratory of Automatic Target Recognition, College of Electronic Science and Technology, National University of Defense Technology, Changsha 410073, China
+Institute of Artificial Intelligence Application, Central South University of Forestry and Technology, Changsha 410004, China
+School of Information Science and Electronic Engineering, Shanghai Jiao Tong University, Shanghai 200240, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415971234,2025,(affiliations),"School of Electronics and Information, Northwestern Polytechnical University, Xi&#x0027;an, China
+Shanghai Research Institute for Intelligent Autonomous Systems, Tongji University, Shanghai, China
+Research Unit of Health Sciences and Technology and the Center for Machine Vision and Signal Analysis, University of Oulu, Oulu, Finland
+School of Communication and Information Engineering, Chongqing University of Posts and Telecommunications, Chongqing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Finland is not in the specified country list, so it is counted as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4226029051,2022,(affiliations),"Alibaba Group
+Zhejiang University",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Alibaba Group and Zhejiang University are both in mainland China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4310171728,2022,(affiliations),"Institute of Artificial Intelligence and Blockchain, Guangzhou University, Guangzhou 510006, China
+Engineering Research Center of Digital Forensics, Ministry of Education, Nanjing University of Information Science and Technology, Nanjing 210044, China
+School of Computer Science Engineering, Nanyang Technological University, Singapore 639798, Singapore",1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4401203140,2024,(affiliations),"University of South Australia, Adelaide, Australia
+Institute of Infocomm Research, Singapore, Singapore",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4306316933,2022,(affiliations),"Baidu Research, Bellevue, WA, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Baidu Research is a Chinese company but the affiliation explicitly lists Bellevue, WA, USA, so it is placed in the US.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4391769118,2023,(affiliations),"School of Mechanical Engineering, Beijing Institute of Technology,Beijing,China,100081",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Beijing, China.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4407941642,2025,(affiliations),"Qingdao Institute of Software, College of Computer Science and Technology, China University of Petroleum (East China), Qingdao 266580, China
+Shandong Key Laboratory of Intelligent Oil & Gas Industrial Software, Qingdao 266580, China
+Computer Vision Center, Universitat Autònoma de Barcelona, 08193 Barcelona, Spain
+Higher School of Technology, Amazonas State University, Manaus 69000, Brazil",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,China and Brazil are clearly stated; Spain is not in the target list so ignored.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402665422,2024,(affiliations),"G H Raisoni University, Saikheda Borgaon, Madhya Pradesh, India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,India is explicitly stated in the affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4319300674,2023,(affiliations),"ETH Z&#x00FC;rich,Switzerland
+Singapore Management University,Singapore
+Xi&#x2019;an Jiaotong University,China
+Harbin Institute of Technology,China",1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,"ETH Zurich is in Switzerland (other), Singapore Management University in Singapore, Xi'an Jiaotong University and Harbin Institute of Technology in China (mainland).",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416249850,2025,(affiliations),"Soochow University,School of Computer Science and Technology,Suzhou,China
+Nanyang Technological University (NTU),College of Computing and Data Science,Singapore",1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,"Soochow University is in Suzhou, China; NTU is in Singapore.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4385413509,2023,(affiliations),"National Space Science Center, Chinese Academy of Sciences, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4403791319,2024,(affiliations),"Beihang University &amp; Tianmushan Laboratory, Beijing, China
+Beihang University, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Both affiliations explicitly state China, so only cn is set.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402775319,2024,(affiliations),"NKIARI, Shenzhen Futian
+VCIP, CS, Nankai University
+MICC, University of Florence
+Tencent Youtu Lab",1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,NKIARI Shenzhen Futian and Nankai University are in mainland China; University of Florence is in Italy; Tencent Youtu Lab is in China (Shenzhen).,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7167491293,2026,(affiliations),"Sreyas Institute of Engineering and Technology,Dept. of CSE,Hyderabad,Telangana,India
+MLR Institute of Technology,Hyderabad,Telangana,India
+Malla Reddy Engineering College for Women,Dept. of CSE-AIML,Hyderabad,Telangana
+Vemu Institute of Technology,Chittoor,AP,India
+Rajalakshmi Engineering College,Chennai,TN,India
+Sri Shanmugha College of Engineering and Technology,Salem,TN,India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,"All affiliations are in India; Malla Reddy Engineering College for Women lacks a country but Hyderabad, Telangana is in India.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7134174029,2025,(affiliations),"School of Computing, Southern Illinois University,Carbondale,IL,USA
+New Jersey Institute of Technology,Department of Computer Science,Newark,NJ,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations clearly state USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408235838,2024,(affiliations),"University of Information Technology,Information Security Laboratory,Ho Chi Minh city,Vietnam",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Vietnam, which is not in the listed countries, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4399563101,2024,(affiliations),"Department of Electrical and Computer Engineering, Missouri University of Science and Technology, Rolla, MO, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Only one affiliation from USA, clearly identified by state and country.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4392939995,2024,(affiliations),"School of Telecommunications Engineering, Xidian University, Xi&#x0027;an, China
+School of Automation, Northwestern Polytechnical University, Xi&#x0027;an, China
+University of New South Wales (UNSW), Sydney, NSW, Australia
+Shandong Normal University, Jinan, China",1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402916653,2024,(affiliations),"Samsung Research America
+Georgia Institute of Technology",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Samsung Research America is in the US; Georgia Institute of Technology is in the US.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416286251,2025,(affiliations),"&#x00C9;cole Polytechnique F&#x00E9;d&#x00E9;rale de Lausanne, Lausanne, Switzerland",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Switzerland is not in the listed countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7167478356,2026,(affiliations),"China University of Mining and Technology,School of Information and Control Engineering,Xuzhou,China,221116
+Northwest A&#x0026;F University,College of Information Engineering,China,712100
+University of Chinese Academy of Sciences,School of Computer Science and Technology,Beijing,China,100049",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All three affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4405305310,2024,(affiliations),"School of Cyberspace Science and Technology, Beijing Institute of Technology,Beijing,China
+China Academy of Space Technology,Qian Xuesen Laboratory of Space Technology,Beijing,China
+Technical University of Denmark,Department of Applied Mathematics and Computer Science,Kongens Lyngby,Denmark",1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Denmark is not in the list of specified countries, so it counts as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4214808594,2022,(affiliations),"Gwangju Institute of Science and Technology (GIST),Gwangju,Republic of Korea,61005",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,"Affiliation clearly states Republic of Korea, which is South Korea.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415034158,2025,(affiliations),"Ningbo Institute of Digital Twin, Eastern Institute of Technology, Ningbo,Ningbo,P. R. China,315000",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation explicitly states P. R. China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7161279999,2026,(affiliations),"Technical University of Munich, Munich, Germany",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4406858942,2024,(affiliations),"Faculty of Science,Dept. of Industrial Management,Sri Lanka",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Sri Lanka is not in the list of specified countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416878740,2025,(affiliations),"University of New South Wales
+The University of Queensland
+The Hong Kong University of Science and Technology
+Army Research Laboratory
+UNSW Sydney",0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,Army Research Laboratory is US; UNSW and UQ are Australia; HKUST is Hong Kong.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4412377009,2025,(affiliations),"School of Computer Science and Technology, Xi'an Jiaotong University, Xi'an, China
+Department of Computer Science, The University of Manchester, Manchester, United Kingdom
+National University of Singapore, Singapore, Singapore
+Powerchina Huadong Engineering Corporation Limited, Hangzhou, China
+Northwestern Polytechnical University, Xi'an, China",1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,"China appears twice, United Kingdom once, Singapore once; all countries explicitly stated.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4411023939,2025,(affiliations),"Computer and Information Engineering, Institute of Natural Sciences, Sakarya University, 54050 Sakarya, Türkiye
+Vocational School of Cyber Security, Istanbul Technical University, 34469 Istanbul, Türkiye
+Computer Engineering, Faculty of Computer and Information Sciences, Sakarya University, 54050 Sakarya, Türkiye",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"All affiliations are in Türkiye (Turkey), which is not in the listed countries, so mapped to 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4379113168,2023,(affiliations),"School of Petroleum Engineering, China University of Petroleum, Qingdao; School of Civil Engineering, Qingdao University of Technology (Corresponding author)
+School of Petroleum Engineering, China University of Petroleum, Qingdao
+State Key Laboratory of Offshore Oil Exploitation
+CNOOC Research Institute Ltd
+School of Civil Engineering, Qingdao University of Technology",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"All affiliations are in China (Qingdao, Beijing) or vague (State Key Lab, CNOOC Research Institute) but clearly Chinese.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4409263552,2025,(affiliations),Warsaw University of Technology,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Warsaw University of Technology is in Poland, which is not in the listed countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312826019,2022,(affiliations),"School of mechanical engineering, University of Science and Technology Beijing,Beijing,China,100083
+Institute of Automation, Chinese Academy of Sciences,Beijing,China,100190
+Institute of Applied Mathematics, AMSS, Chinese Academy of Sciences,Beijing,China,100190",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7162416665,2026,(affiliations),"Guangdong University of Petrochemical Technology
+Ltd
+Guangdong Provincial Key Laboratory of Petrochemical Equipment Fault Diagnosis",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Guangdong University of Petrochemical Technology is in China; 'Ltd' is vague and ignored.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W2944954510,2019,(affiliations),"Arlington, VA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,"Arlington, VA is in the United States.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3167869959,2021,(affiliations),"Mila, McGill University
+VU Amsterdam
+DIRO - Mila, Université de Montréal",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,VU Amsterdam is in the Netherlands (other). McGill and Montreal are in Canada.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4392904751,2024,(affiliations),"Tsinghua University,Tsinghua Shenzhen International Graduate School,China
+Ping An Technology (Shenzhen) Co., Ltd.,Shenzhen,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4392412729,2023,(affiliations),"Chinese Academy of Sciences,Institute of Computing Technology,Beijing,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4396877686,2024,(affiliations),"Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312505697,2022,(affiliations),"Department of Automotive Engineering, Tongji University, Shanghai, China
+Department of Electrical Engineering, Eindhoven University of Technology, Eindhoven, The Netherlands",1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Eindhoven University of Technology is in the Netherlands, which is not in the list of specified countries, so it counts as 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408355714,2025,(affiliations),Nanyang Technological University,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Nanyang Technological University is in Singapore.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4408355302,2025,(affiliations),"Fortemedia Singapore,Singapore",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Affiliation explicitly states Singapore.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4386598371,2023,(affiliations),"Central South University,School of Computer Science and Engineering,Changsha,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4292787441,2022,(affiliations),"University of Colorado Colorado Springs,Vision and Security Technology Lab,Colorado Springs,CO,USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4312341739,2022,(affiliations),"Department of Electrical Engineering, Ulsan National Institute of Science and Technology, Ulsan, South Korea
+School of Advanced Materials Science and Engineering, SKKU Institute of Energy Science and Technology, Sungkyunkwan University, Suwon, South Korea",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state South Korea.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4387610113,2023,(affiliations),Department of Electrical and Computer Engineering Missouri University of Science and Technology  Rolla Missouri USA,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Only affiliation clearly states USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7117482213,2025,(affiliations),"Graduate School of Information Science and Technology, Hokkaido University, N-14, W-9, Kita-ku, Sapporo 060-0814, Hokkaido, Japan
+Education and Research Center for Mathematical and Data Science, Hokkaido University, N-12, W-7, Kita-ku, Sapporo 060-0812, Hokkaido, Japan
+Faculty of Information Science and Technology, Hokkaido University, N-14, W-9, Kita-ku, Sapporo 060-0814, Hokkaido, Japan
+Faculty of Medicine, Hokkaido University, N-15 W-7, Kita-ku, Sapporo 060-8648, Hokkaido, Japan
+Faculty of Health Sciences, Hokkaido University, N-12, W-5, Kita-ku, Sapporo 060-0812, Hokkaido, Japan",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"All affiliations are from Hokkaido University, Japan.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7133313723,2026,(affiliations),"Department of Computer Science and Engineering, Shanghai Key Laboratory of Scalable Computing and Systems, Shanghai Jiao Tong University, Shanghai, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7117307335,2025,(affiliations),"LSATE Laboratory, National School of Applied Science, Sidi Mohamed Ben Abdellah University, Fez 30000, Morocco
+L3IA Laboratory, Faculty of Sciences Dhar El Mehraz, Sidi Mohamed Ben Abdellah University, Fez 30000, Morocco",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Both affiliations are in Morocco, which is not in the listed countries, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4406261323,2024,(affiliations),"Hunan University,College of Computer Science and Electronic Engineering,Changsha,China
+Hunan University Affiliated Hospital,Ultrasound Diagnosis Department,Xiangtan,China
+Shenzhen Maternity and Child Healthcare Hospital,Department of Ultrasound,Shenzhen,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7165662103,2026,(affiliations),"Faculty of Engineering, Universidad del Sinú, Montería 230002, Colombia",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Colombia is not in the listed countries, so it falls under 'other'.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4412376934,2025,(affiliations),"MOE Key Laboratory of Trustworthy Distributed Computing and Service, Beijing University of Posts and Telecommunications, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415489862,2025,(affiliations),"College of Combat Support, Rocket Force Engineering University, Xi’an 710025, China
+College of Information Science and Technology, Beijing University of Chemical Technology, Beijing 100029, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7197005286,2026,(affiliations),"School of Artificial Intelligence, Beijing Normal University, Beijing, Beijing, China and School of Computer Science &amp; Technology, Beijing Institute of Technology, Beijing, Beijing, China
+School of Computer Science &amp; Technology, Beijing Institute of Technology, Beijing, Beijing, China
+School of Artificial Intelligence, Beijing Normal University, Beijing, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations explicitly state China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W3169617796,2021,(affiliations),"Institute of Automation, Chinese Academy of Sciences,NLPR,Beijing,China,100190",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4399145856,2024,(affiliations),"Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4405846311,2024,(affiliations),"School of Computer Science and Technology, Shandong Technology and Business University,Yantai Key Laboratory of Big Data Modeling and Intelligent Computing, Immersion Technology and Evaluation Shandong Engineering Research Center,Yantai,Shandong,China
+School of Mathematics and Information Science, Shandong Technology and Business University,Yantai Key Laboratory of Big Data Modeling and Intelligent Computing, Immersion Technology and Evaluation Shandong Engineering Research Center,Yantai,Shandong,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly list China as country.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4407153454,2025,(affiliations),"Department of Computer Science and Engineering, G H Raisoni University, Saikheda, Borgaon, Madhya Pradesh 480337, India",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,India is explicitly mentioned in the affiliation.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7162431709,2025,(affiliations),"Associate Professor, College of Technical Engineering, Imam Ja’afar Al-Sadiq University, Al-Muthanna 66002, Iraq.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"Affiliation is in Iraq, which is not in the listed countries, so 'other' is set to 1.",deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4415444127,2025,(affiliations),"School of Automation, Central South University, Changsha, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Affiliation clearly states China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4402042927,2024,(affiliations),"Aalborg University, Denmark
+East China Normal University, China
+Harbin Institute of Technology, China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4385477829,2023,(affiliations),"Beijing Jiaotong University,State Key Laboratory of Rail Traffic Control and Safety,Beijing,China
+Beijing Jiaotong University,Collaborative Innovation Center of Railway Traffic Safety,Beijing,China",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Both affiliations explicitly list China.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W4416177793,2025,(affiliations),"Department of Electrical and Computer Engineering, University of North Carolina at Charlotte, Charlotte, NC, USA
+Public Policy Program, University of North Carolina at Charlotte, Charlotte, NC, USA
+Department of Electrical Engineering and Computer Science, University of Wyoming, Laramie, WY, USA",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,All affiliations are in the USA.,deepseek-ai/DeepSeek-V4-Flash
+https://openalex.org/W7131063523,2025,(affiliations),Canoakbit Alliance,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,No affiliation strings provided; only a title and an abstract with a non-geographic name.,deepseek-ai/DeepSeek-V4-Flash

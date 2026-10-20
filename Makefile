@@ -31,6 +31,8 @@ validate:
 	$(RUN) clbib.validate score labels_sonnet_test.csv sonnet_test
 	$(RUN) clbib.llm_label compare --split dev
 	$(RUN) clbib.llm_label compare --split test
+	$(RUN) clbib.country_validate score
+	$(RUN) clbib.benchmark_validate score
 
 test:
 	PYTHONPATH=src $(PY) -m unittest discover -s tests -v

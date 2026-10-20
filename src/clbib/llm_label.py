@@ -58,16 +58,16 @@ Labels are multi-label. Judge only what the text supports.
 Answer with one JSON object and nothing else: {"is_cl":0|1, ... all 13 keys ..., "notes":"short reason for doubtful calls or empty"}"""
 
 
-def parse(txt: str) -> dict:
+def parse(txt: str, labels: list[str] = LABELS) -> dict:
     d = json.loads(txt[txt.find("{"): txt.rfind("}") + 1])
-    missing = [k for k in LABELS if k not in d]
+    missing = [k for k in labels if k not in d]
     if missing:
         raise ValueError(f"missing keys {missing}")
-    return {k: int(bool(int(d[k]))) for k in LABELS} | {"notes": str(d.get("notes", ""))}
+    return {k: int(bool(int(d[k]))) for k in labels} | {"notes": str(d.get("notes", ""))}
 
 
-def call_hermes(title: str, abstract: str, model: str) -> dict:
-    prompt = f"{GUIDE}\n\nTitle: {title}\n\nAbstract: {abstract}"
+def call_hermes(title: str, abstract: str, model: str, guide: str = GUIDE, labels: list[str] = LABELS) -> dict:
+    prompt = f"{guide}\n\nTitle: {title}\n\nAbstract: {abstract}"
     last = ""
     for attempt in range(4):
         with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as q:
@@ -77,7 +77,7 @@ def call_hermes(title: str, abstract: str, model: str) -> dict:
                                 "--provider", "anthropic", "-t", "", "--query-file", q.name],
                                capture_output=True, text=True, timeout=300)
             body = "\n".join(l for l in r.stdout.splitlines() if not l.startswith(("Session:", "session_id:")))
-            return parse(body)
+            return parse(body, labels)
         except (subprocess.TimeoutExpired, ValueError, json.JSONDecodeError) as e:
             last = str(e)
             time.sleep(3 * (attempt + 1))
@@ -86,15 +86,15 @@ def call_hermes(title: str, abstract: str, model: str) -> dict:
     raise RuntimeError(f"hermes call failed after retries: {last}")
 
 
-def call(title: str, abstract: str, model: str) -> dict:
+def call(title: str, abstract: str, model: str, guide: str = GUIDE, labels: list[str] = LABELS) -> dict:
     if model.startswith("hermes:"):
-        return call_hermes(title, abstract, model.split(":", 1)[1])
+        return call_hermes(title, abstract, model.split(":", 1)[1], guide, labels)
     key = os.environ.get("DEEPINFRA_API_KEY", "").strip()
     if not key:
         sys.exit("DEEPINFRA_API_KEY not set")
     body = {"model": model, "temperature": 0, "max_tokens": 2000,
             "response_format": {"type": "json_object"},
-            "messages": [{"role": "system", "content": GUIDE},
+            "messages": [{"role": "system", "content": guide},
                          {"role": "user", "content": f"Title: {title}\n\nAbstract: {abstract}"}]}
     r = urllib.request.Request(BASE, data=json.dumps(body).encode(), method="POST")
     r.add_header("Authorization", f"Bearer {key}")
@@ -104,19 +104,20 @@ def call(title: str, abstract: str, model: str) -> dict:
         try:
             with urllib.request.urlopen(r, timeout=120) as resp:
                 txt = json.loads(resp.read())["choices"][0]["message"]["content"]
-            return parse(txt)
+            return parse(txt, labels)
         except (urllib.error.URLError, ValueError, KeyError, json.JSONDecodeError) as e:
             last = str(e)
             time.sleep(2 * (attempt + 1))
     raise RuntimeError(f"failed after retries: {last}")
 
 
-def label(src: str, out: str, model: str, workers: int = 1) -> None:
+def label(src: str, out: str, model: str, workers: int = 1, guide: str = GUIDE,
+          labels: list[str] = LABELS) -> None:
     rows = pl.read_csv(VAL / src, infer_schema_length=None).select("id", "first_year", "title", "abstract")
     path = VAL / out
     done = set(pl.read_csv(path)["id"].to_list()) if path.exists() else set()
     todo = [r for r in rows.iter_rows(named=True) if r["id"] not in done]
-    cols = ["id", "first_year", "title", "abstract"] + LABELS + ["notes", "model"]
+    cols = ["id", "first_year", "title", "abstract"] + labels + ["notes", "model"]
     lock, n = threading.Lock(), [len(done)]
     with open(path, "a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
@@ -124,7 +125,7 @@ def label(src: str, out: str, model: str, workers: int = 1) -> None:
             w.writeheader()
 
         def one(r: dict) -> None:
-            lab = call(r["title"], r["abstract"] or "", model)
+            lab = call(r["title"], r["abstract"] or "", model, guide, labels)
             with lock:
                 w.writerow({**r, **lab, "model": model})
                 f.flush()

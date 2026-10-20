@@ -1,4 +1,6 @@
-# Validation (F2)
+# Validation
+
+Most of this file covers the F2 sub-area tags. The F3 and F4 checks are summarised at the end.
 
 The sub-area rules in [`src/clbib/subareas.py`](../src/clbib/subareas.py) are scored against labels written by three LLM labellers. There is no human gold set, so every score below is agreement with a model, not ground truth.
 
@@ -112,3 +114,19 @@ PYTHONPATH=src .venv/bin/python -m clbib.llm_label label --src test_to_label.csv
 ```
 
 Outputs: `results/validation_{llm,deepseek,sonnet}_{dev,test}.csv` and `results/agreement_labellers_{dev,test}.csv`.
+
+## Countries (F3) and benchmarks (F4)
+
+Same three-labeller setup, with Claude Opus 5.5 in place of the original Claude sessions. Each labeller sees only the text it needs and never the value being checked. Results and method are in the main README.
+
+| check | sample | label files | guide |
+|---|---|---|---|
+| OpenAlex countries vs Crossref affiliation strings | `countries_to_label.csv`: 164 works with an OpenAlex country, 30 without (from 300 + 200 drawn, seed 20261021; only works with Crossref affiliations kept) | `labels_country_{opus,sonnet,deepseek}.csv` | `GUIDE` in `src/clbib/country_validate.py` |
+| benchmark detector vs title + abstract | `benchmarks_to_label.csv`: 150 detector-positive + 150 detector-negative, seed 20261021 | `labels_bench_{opus,sonnet,deepseek}.csv` | `GUIDE` in `src/clbib/benchmark_validate.py` |
+
+```bash
+PYTHONPATH=src .venv/bin/python -m clbib.country_validate label --labeller deepseek --workers 4
+PYTHONPATH=src .venv/bin/python -m clbib.benchmark_validate label --labeller deepseek --workers 4
+```
+
+`make validate` rescores both from the label files here.

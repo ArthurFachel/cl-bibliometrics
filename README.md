@@ -8,8 +8,8 @@ A reproducible bibliometric dataset of continual learning and catastrophic forge
 
 - **The field grew about 2.8x in three years.** Works where continual learning is the topic went from 756 first appearing in 2022 to 2,112 in 2025, and 2026 had already passed that (2,133) by October 19.
 - **LLMs took over the growth.** The share of those works that use LLMs, foundation models or parameter-efficient tuning rose from 2.5% in 2019 to 29% in 2025 and 39% in 2026. Replay and regularization held steady at about 30% each. The PEFT/LLM tag scores F1 0.84 on a held-out sample.
-- **China now writes half of it.** Among works with a known affiliation, China's share rose from 19% (2015-2019) to 53% (2023-2026), and the US share fell from 40% to 18%. Industry co-authorship fell from 24% of works in 2019 to 8% in 2026, but PEFT/LLM works are 1.7x more likely than the rest to have a company author.
-- **Benchmarks moved from MNIST to pre-trained models, and only lately to LLMs.** Among works that name or cite a benchmark, MNIST-scale datasets went from 47% in 2018 to 13% in 2023. Pre-trained-era benchmarks (ImageNet-R, CUB, DomainNet, VTAB) rose from 6% to 25% in 2025. Language benchmarks stayed under 5% until 2024 and reached 11% in 2026. CIFAR stays the default throughout.
+- **China now writes half of it.** Among works with a known affiliation, China's share rose from 19% (2015-2019) to 53% (2023-2026), and the US share fell from 40% to 18%. OpenAlex's China attribution agrees with publisher affiliations in 99% of checked works. Industry co-authorship fell from 24% of works in 2019 to 8% in 2026, but PEFT/LLM works are 1.7x more likely than the rest to have a company author.
+- **Benchmarks moved from MNIST to pre-trained models, and only lately to LLMs.** Among works that name or cite a benchmark, MNIST-scale datasets went from 47% in 2018 to 13% in 2023. Pre-trained-era benchmarks (ImageNet-R, CUB, DomainNet, VTAB) rose from 6% to 25% in 2025. Language benchmarks stayed under 5% until 2024 and reached 11% in 2026, but that's a floor: the detector finds only about one in five language-benchmark papers. CIFAR stays the default throughout.
 - **arXiv matters less than it did.** 57% of focused works were also on arXiv in 2019, against 38% in 2025. The broad corpus shows the same drop (54% -> 37%), so it isn't an artefact of the focus rule.
 - **Brazil is marginal.** 32 focused works since 2015 (rank 30, under 0.5% of the field), led by UNICAMP and UFPE.
 - **Keyword search over-collects.** 10-22% of works matched by the queries only mention continual learning in passing, depending on which labeller is asked. That's why all findings use a stricter focused corpus (precision 0.93-0.98 on held-out data).
@@ -26,8 +26,8 @@ None of these findings changes when works that exist only on deposit repositorie
 |---|---|---|
 | F1 | How fast is the field growing, and how much of it lives on arXiv? | done |
 | F2 | Which sub-areas drive the growth? | done: rule-based tags, validated on a held-out sample |
-| F3 | Who collaborates with whom? Which institutions and countries are central? Where does Brazil sit? | first pass: countries, industry, institution network, Brazil |
-| F4 | When did benchmarks migrate (Permuted MNIST -> Split CIFAR -> ImageNet-R -> LLM suites)? | first pass: abstract mentions + dataset citations |
+| F3 | Who collaborates with whom? Which institutions and countries are central? Where does Brazil sit? | done: countries, industry, institution network, Brazil; countries checked against Crossref |
+| F4 | When did benchmarks migrate (Permuted MNIST -> Split CIFAR -> ImageNet-R -> LLM suites)? | done: abstract mentions + dataset citations, scored against three LLM labellers; NLP & LLM undercounted |
 
 ## Corpus
 
@@ -108,6 +108,29 @@ Full series: [`results/subarea_by_year.csv`](results/subarea_by_year.csv).
 - **Authors.** 24,950 authors, but only 37% fall in the largest connected component: most groups publish in isolation ([`results/network_summary.csv`](results/network_summary.csv)).
 - **Brazil.** 32 works: UNICAMP (5), UFPE (4), then one or two each from 24 other institutions. 18 of the 32 appeared in 2025-2026. The most cited is PODNet (UNICAMP with French partners, 710 citations). All three Brazilian PEFT/LLM works are from 2026, two of them from PUCRS. Full list: [`results/brazil_works.csv`](results/brazil_works.csv).
 
+### Are the countries right?
+
+[`src/clbib/country_validate.py`](src/clbib/country_validate.py) checks OpenAlex's country codes against an independent source: the raw affiliation strings publishers deposit in Crossref (e.g. "Hunan University, Changsha, China"). Three LLM labellers (Claude Opus 5.5, Claude Sonnet 5.5, DeepSeek V4 Flash) turn each work's strings into countries without seeing the OpenAlex codes, and the majority vote is the reference.
+
+The population is focused works from 2018-2026 with a non-arXiv DOI (6,526, of which 93% have an OpenAlex country). 300 works with a country and 200 without were drawn; 164 and 30 of them have affiliations in Crossref and were labelled.
+
+| country | Crossref positives | precision | recall |
+|---|---|---|---|
+| China | 91 | 0.99 | 0.99 |
+| United States | 21 | 0.86 | 0.90 |
+| India | 12 | 1.00 | 1.00 |
+| Singapore | 14 | 1.00 | 1.00 |
+| United Kingdom | 7 | 1.00 | 1.00 |
+| Hong Kong | 5 | 0.71 | 1.00 |
+| Germany | 3 | 0.75 | 1.00 |
+
+- When OpenAlex gives a work a country, it's almost always right: the full set of the 14 tracked countries matches exactly in 94% of works. The errors that do occur are mostly extra countries that Crossref doesn't list (3 for the US, 2 for Hong Kong, 1 for Germany), plus 2 missed US affiliations.
+- Works without an OpenAlex country have a different mix. China is on 23% of them (7 of 30, 95% CI 12-41%) against 55% of works with a country. In this population they are only 7% of works, so filling them in would move China's share from 55% to about 53%. The bias is real but small here.
+- What this can't check: arXiv-only works, where missing affiliations are more common, and publishers that don't deposit affiliations in Crossref (mostly IEEE, Springer and Elsevier do). If the missing part of arXiv looks like the missing part checked here, China's 53% overstates its share by a few points.
+- The labellers agree with each other almost perfectly (kappa 0.91 or higher for every country), so the reference isn't model-dependent.
+
+Full tables: [`results/country_validation.csv`](results/country_validation.csv), [`results/country_validation_agreement.csv`](results/country_validation_agreement.csv).
+
 ## Benchmarks (F4)
 
 [`src/clbib/benchmarks.py`](src/clbib/benchmarks.py) marks a work as using a benchmark when its abstract names it or it cites the paper that introduced the dataset (20 benchmarks in 8 families). Method papers that also popularised a split, like Matching Networks for mini-ImageNet, are mention-only, because they are cited mostly for the method.
@@ -128,11 +151,33 @@ Since 2018, only 16-49% of works per year name or cite any benchmark, and the sh
 - The MNIST decline (2018-2023) and the late arrival of language benchmarks hold under both signals.
 - CIFAR's drop after 2024 appears only with citations; by mentions it stays above 50%, so it's a coverage effect, not a real decline.
 - MNIST-scale climbs back to 18-24% in 2025-2026. It survives the repository filter, so it isn't Zenodo noise, but it isn't explained yet and isn't interpreted.
-- Language benchmarks lag the PEFT/LLM tag (39% of 2026 works) because many of those papers apply prompts or adapters to pre-trained vision models and evaluate on vision benchmarks.
+- Language benchmarks lag the PEFT/LLM tag (39% of 2026 works) partly because many of those papers apply prompts or adapters to pre-trained vision models and evaluate on vision benchmarks, and partly because the detector misses most language datasets (see below).
 
 Spot-check snippets for every benchmark: [`results/benchmark_audit.csv`](results/benchmark_audit.csv). Mention and citation counts: [`results/benchmark_signals.csv`](results/benchmark_signals.csv).
 
-## Validation
+### Does the detector find the benchmarks?
+
+[`src/clbib/benchmark_validate.py`](src/clbib/benchmark_validate.py) asks the same three LLM labellers which benchmark families each paper's title and abstract use, without showing them the detector's output. The sample is 150 works where the abstract names a benchmark and 150 where it doesn't (focused, 2018-2026, with an abstract; seed 20261021). Scores are re-weighted by stratum size (1,207 vs 6,384 works), so recall estimates the corpus-level value. Only the mention signal (title + abstract) is scored, since the labellers can't see reference lists. The detector was frozen in commit `8381df9` before any label existed.
+
+| family | sample positives | precision | recall (95% CI) |
+|---|---|---|---|
+| MNIST-scale | 37 | 1.00 | 0.97 (0.91-1.00) |
+| CIFAR | 91 | 1.00 | 0.92 (0.86-0.98) |
+| ImageNet-scale | 52 | 0.95 | 1.00 |
+| pre-trained era | 25 | 1.00 | 1.00 |
+| detection & segmentation | 17 | 1.00 | 0.47 (0.23-1.00) |
+| CL-native | 10 | 1.00 | 0.49 (0.19-1.00) |
+| RL | 5 | 1.00 | 0.43 (0.09-1.00) |
+| NLP & LLM | 23 | 1.00 | 0.19 (0.09-0.39) |
+
+- The vision families that carry the MNIST -> CIFAR -> pre-trained story are detected reliably, so that part of the trend stands.
+- Precision is near 1 everywhere: when the detector names a family, the paper uses it.
+- NLP & LLM recall is about 0.19. Language CL papers use a long tail of task datasets (ACE and MAVEN for event detection, COCO captions, instruction-tuning streams, new benchmarks built by the paper) that a fixed list of 20 benchmarks doesn't cover. The language shares in the table above are a lower bound, and the lag behind the PEFT/LLM tag is partly a measurement artefact.
+- Labellers agree with each other at kappa 0.96 or higher on MNIST-scale, CIFAR, ImageNet-scale and pre-trained era, and 0.74-0.76 for DeepSeek against the two Claude models on CL-native, RL and NLP & LLM.
+
+Full tables: [`results/benchmark_validation.csv`](results/benchmark_validation.csv), [`results/benchmark_validation_agreement.csv`](results/benchmark_validation_agreement.csv).
+
+## Validation of the sub-area tags (F2)
 
 The rules were scored against three LLM labellers (Claude, DeepSeek V4 Flash, Claude Sonnet 5) on two disjoint samples of 150 works. The rules were tuned on the dev sample, frozen in commit `098968f`, then scored once on the test sample. None of the labellers saw the rules. There is no human gold set, so these scores measure agreement with models.
 
@@ -153,7 +198,7 @@ Held-out F1 by tag:
 
 A tag is used for findings only if its test F1 is at least 0.7 under all three labellers. The split doesn't depend on which model wrote the labels. Pairwise kappa between labellers is 0.83 or higher on the five tags used. Supports are small, so differences of a few points are noise.
 
-Corpus precision, dev scores and full agreement tables: [`validation/README.md`](validation/README.md).
+Corpus precision, dev scores and full agreement tables: [`validation/README.md`](validation/README.md). Country (F3) and benchmark (F4) checks are in their own sections above.
 
 ## Sensitivity: repository-only works
 
@@ -195,6 +240,8 @@ src/clbib/
   llm_label.py    LLM labellers and pairwise agreement
   networks.py     F3 countries, industry, institution and author networks
   benchmarks.py   F4 benchmark mentions and dataset citations
+  country_validate.py    F3 check: OpenAlex countries vs Crossref affiliations
+  benchmark_validate.py  F4 check: benchmark detector vs LLM labellers
   sensitivity.py  headline numbers with and without repository-only works
 tests/            parsing, dedup, tag rules, benchmark regexes, network building
 validation/       samples, label files and labelling guide
@@ -205,7 +252,8 @@ validation/       samples, label files and labelling guide
 - Retrieval is keyword-based. Papers that never say "continual learning" or "catastrophic forgetting" (e.g. "model editing", "incremental learning" alone) are missed.
 - Sub-area validation uses LLM labels only. Agreement across three labellers makes the tags more credible, but it isn't a human gold standard.
 - OpenAlex fields, topics and institution data are machine-assigned. Affiliations are missing for 10-39% of works per year, more often on arXiv, and author disambiguation is OpenAlex's.
-- Benchmarks are only visible when an abstract names them or a reference list exists; most papers show neither.
+- Benchmarks are only visible when an abstract names them or a reference list exists; most papers show neither. Even when the abstract names one, the detector misses about four in five language datasets.
+- The country check covers only works with a non-arXiv DOI and Crossref affiliations, and only 30 works without an OpenAlex country.
 - The repository rule is source-based. It can't catch low-quality work posted on arXiv, and it drops a legitimate paper that only exists on Zenodo.
 - 2026 is a partial year.
 
