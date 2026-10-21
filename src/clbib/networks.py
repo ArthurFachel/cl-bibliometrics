@@ -147,7 +147,17 @@ def institution_graph(pw: pl.DataFrame) -> nx.Graph:
         for a, b in itertools.combinations(insts, 2):
             w = G.get_edge_data(a, b, {"weight": 0})["weight"]
             G.add_edge(a, b, weight=w + 1)
-    return G
+    return canonical(G)
+
+
+def canonical(G: nx.Graph) -> nx.Graph:
+    """Same graph with nodes and edges inserted in sorted order. Louvain's seeded
+    shuffle depends on insertion order, and polars group_by order is not stable,
+    so without this the communities change from run to run."""
+    H = nx.Graph()
+    H.add_nodes_from(sorted(G.nodes(data=True)))
+    H.add_edges_from(sorted((min(a, b), max(a, b), d) for a, b, d in G.edges(data=True)))
+    return H
 
 
 def author_graph(auth: pl.DataFrame) -> nx.Graph:
