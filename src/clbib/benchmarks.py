@@ -23,6 +23,8 @@ Outputs:
 """
 from __future__ import annotations
 
+import re
+
 import matplotlib
 
 matplotlib.use("Agg")
@@ -96,8 +98,52 @@ def rx(pattern: str) -> str:
     return pattern if pattern.startswith("(?-i)") else "(?i)" + pattern
 
 
-FAMILY = {n: v[0] for n, v in BENCHMARKS.items()}
-ALL_NAMES = list(BENCHMARKS)
+# Layer 2 (heuristic, mention-only): a language-task paper that names an
+# acronym-like dataset next to "dataset"/"benchmark"/"corpus". Python `re`,
+# because each candidate name is checked against a stoplist.
+NAMED_LANGUAGE_DATASET = "Other named language dataset"
+NLP_LAYER2 = False  # set by the pre-registered rule after round 2 (validation/nlp_round2_prereg.md)
+_LANG_CONTEXT = re.compile(
+    r"(?i)\b(large language models?|language models?|llms?|nlp|natural language|text classification|"
+    r"question answering|dialog(ue)?s?|event detection|relation (extraction|classification)|named entity|"
+    r"summari[sz]ation|machine translation|instruction[- ]tun\w*|caption\w*|visual question answering|vqa|"
+    r"sentiment|intent (detection|classification))\b")
+_NAME = re.compile(r"\b[A-Z][A-Za-z]*[A-Z0-9][A-Za-z0-9+-]*\b")
+_AFTER = re.compile(r"[^.;]{0,60}?\b(?:datasets?|benchmarks?|corpora|corpus)\b")
+_BEFORE = re.compile(r"\b(?:datasets?|benchmarks?|corpora|corpus)\b[^.;]{0,25}?"
+                     r"(?:such as|including|namely|i\.e\.,?|like|:|\()[^.;]{0,15}$")
+_NOT_A_DATASET = {
+    "CL", "NLP", "NLU", "NLG", "NER", "MT", "LLM", "LLMs", "VLM", "VLMs", "MLLM", "MLLMs", "CV", "AI", "ML",
+    "LoRA", "CNN", "CNNs", "ViT", "ViTs", "GPT", "BERT", "RoBERTa", "RL", "QA", "VQA", "IL", "CIL", "TIL", "DIL",
+    "FSCIL", "OOD", "SOTA", "PEFT", "MoE", "API", "IoT", "GPU", "GNN", "GNNs", "RNN", "LSTM", "DNN", "DNNs",
+    "KD", "EWC", "SI", "MAS", "GEM", "CLIP", "T5", "LLaMA", "Qwen", "CUB", "VTAB", "DomainNet", "CORe50", "SVHN",
+}
+_VISION_PREFIXES = ("CIFAR", "MNIST", "IMAGENET", "TINY", "MINI")
+
+
+def named_language_dataset_match(text: str | None) -> str | None:
+    """The phrase that makes a work count as naming a language dataset, or None."""
+    if not text or not _LANG_CONTEXT.search(text):
+        return None
+    for m in _NAME.finditer(text):
+        name = m.group(0)
+        if name in _NOT_A_DATASET or name.upper().startswith(_VISION_PREFIXES):
+            continue
+        after = _AFTER.match(text, m.end())
+        if after:
+            return text[m.start():after.end()]
+        before = _BEFORE.search(text, max(0, m.start() - 60), m.start())
+        if before:
+            return text[before.start():m.end()]
+    return None
+
+
+def named_language_dataset(text: str | None) -> bool:
+    return named_language_dataset_match(text) is not None
+
+
+FAMILY = {n: v[0] for n, v in BENCHMARKS.items()} | {NAMED_LANGUAGE_DATASET: "NLP & LLM"}
+ALL_NAMES = list(BENCHMARKS) + [NAMED_LANGUAGE_DATASET]
 
 
 def text_of() -> pl.Expr:
@@ -110,6 +156,10 @@ def mention_flags(df: pl.DataFrame, names: list[str]) -> pl.DataFrame:
     text = text_of()
     cols = []
     for name in names:
+        if name == NAMED_LANGUAGE_DATASET:
+            texts = df.select(text.alias("t"))["t"].to_list()
+            cols.append(pl.Series(name, [named_language_dataset(t) for t in texts], dtype=pl.Boolean))
+            continue
         t = text.str.replace_all(STRIP[name], " ") if name in STRIP else text
         cols.append(t.str.contains(rx(BENCHMARKS[name][1])).alias(name))
     return df.with_columns(cols).select("id", *names)
@@ -117,7 +167,7 @@ def mention_flags(df: pl.DataFrame, names: list[str]) -> pl.DataFrame:
 
 def analysis_names() -> list[str]:
     """Benchmark names behind the findings."""
-    return list(BENCHMARKS)
+    return list(BENCHMARKS) + ([NAMED_LANGUAGE_DATASET] if NLP_LAYER2 else [])
 
 
 def detect(works: pl.DataFrame, refs: pl.DataFrame, names: list[str]) -> pl.DataFrame:
@@ -200,6 +250,10 @@ def audit(works: pl.DataFrame, d: pl.DataFrame, names: list[str], per: int = 4) 
         if s.height == 0:
             continue
         s = s.sample(min(per, s.height), seed=SEED)
+        if name == NAMED_LANGUAGE_DATASET:
+            rows += [{"benchmark": name, "id": i, "snippet": named_language_dataset_match(t)}
+                     for i, t in zip(s["id"].to_list(), s["text"].to_list())]
+            continue
         snip = s.select("id", pl.col("text").str.extract("(?s)(.{0,70}(?:" + rx(BENCHMARKS[name][1]) + ").{0,50})")
                         .alias("snippet"))
         rows += [{"benchmark": name, **r} for r in snip.iter_rows(named=True)]
