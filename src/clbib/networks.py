@@ -119,7 +119,8 @@ def peft_by_country(works: pl.DataFrame, pw: pl.DataFrame, top: int = 10) -> pl.
     groups = {"peft_llm": j.filter(pl.col("peft_llm")), "other": j.filter(~pl.col("peft_llm"))}
     rows = []
     cs = Counter(c for cl in j["countries"].to_list() for c in cl)
-    for c, _ in cs.most_common(top) + ([(FOCUS_COUNTRY, 0)] if FOCUS_COUNTRY not in dict(cs.most_common(top)) else []):
+    top_cs = sorted(cs.items(), key=lambda kv: (-kv[1], kv[0]))[:top]  # ties by name: Counter order follows polars order
+    for c, _ in top_cs + ([(FOCUS_COUNTRY, 0)] if FOCUS_COUNTRY not in dict(top_cs) else []):
         r = {"group": c}
         for g, d in groups.items():
             r[g] = round(d["countries"].list.contains(c).mean(), 3)
