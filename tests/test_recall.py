@@ -2,7 +2,7 @@ import unittest
 
 import polars as pl
 
-from clbib.recall import freeze_rows, match
+from clbib.recall import freeze_rows, match, read_check
 
 
 class TestRecall(unittest.TestCase):
@@ -41,6 +41,14 @@ class TestRecall(unittest.TestCase):
         # W2 is a non-canonical record; its flags come from W3, the canonical record of cluster 2
         self.assertEqual(m["focused"].to_list(), [True, True, False])
         self.assertEqual(m["in_scope"].to_list(), [True, True, False])
+
+    def test_read_check_keeps_trailing_zeros(self):
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "c.csv"
+            p.write_text("arxiv_id,title,published,first_seen\n2610.01590,T,2026-10-01,2026-10-06\n")
+            self.assertEqual(read_check(p)["arxiv_id"].to_list(), ["2610.01590"])
 
 
 if __name__ == "__main__":

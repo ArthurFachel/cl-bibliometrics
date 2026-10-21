@@ -1,9 +1,9 @@
 PY := .venv/bin/python
 RUN := PYTHONPATH=src $(PY) -m
 
-.PHONY: all fetch clean growth subareas validate networks benchmarks drivers sensitivity test refetch
+.PHONY: all fetch clean growth recall subareas validate networks benchmarks drivers sensitivity test refetch
 
-all: fetch clean growth subareas validate networks benchmarks drivers sensitivity
+all: fetch clean growth recall subareas validate networks benchmarks drivers sensitivity
 
 fetch:
 	$(RUN) clbib.fetch
@@ -16,6 +16,9 @@ clean:
 
 growth:
 	$(RUN) clbib.growth
+
+recall:
+	$(RUN) clbib.recall score
 
 subareas:
 	$(RUN) clbib.subareas

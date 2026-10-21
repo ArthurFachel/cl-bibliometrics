@@ -51,6 +51,11 @@ def freeze(src: str) -> None:
     print(f"wrote {len(rows)} rows to {out}")
 
 
+def read_check(path: Path | None = None) -> pl.DataFrame:
+    """The frozen check set. arXiv ids must stay strings: as floats, 2610.01590 becomes 2610.0159."""
+    return pl.read_csv(path or VAL / CHECK, schema_overrides={"arxiv_id": pl.Utf8})
+
+
 def match(check: pl.DataFrame, works: pl.DataFrame) -> pl.DataFrame:
     """One row per check paper: the matching work (arXiv DOI first, then normalised
     title) and corpus flags taken from the canonical record of its dedup cluster."""
@@ -81,7 +86,7 @@ def match(check: pl.DataFrame, works: pl.DataFrame) -> pl.DataFrame:
 
 
 def score() -> None:
-    check = pl.read_csv(VAL / CHECK, infer_schema_length=None)
+    check = read_check()
     m = match(check, pl.read_parquet(C.PROCESSED / "works.parquet"))
     C.RESULTS.mkdir(parents=True, exist_ok=True)
     m.write_csv(C.RESULTS / "recall_check.csv")

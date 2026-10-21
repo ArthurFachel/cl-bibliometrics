@@ -64,7 +64,7 @@ The 2026 arXiv share is probably inflated: many 2026 preprints haven't been matc
 
 ### Recall
 
-45 papers that a separate literature scout had confirmed as continual learning (Sep-Oct 2026) were looked up: 40 (89%) are in the corpus. All 5 misses are indexed in OpenAlex but never use the query phrases ("continual learners", "forgetting" without "catastrophic"). The check set was itself found by searching for CL, so 89% is an upper bound.
+45 papers that a separate literature scout reported as continual learning (runs of 2026-10-06 to 2026-10-18) were looked up by arXiv DOI, then by normalised title. 40 (89%) are in the corpus and in scope, all 40 survive the repository rule, and 36 (80%) pass the focus rule. All 5 misses are indexed in OpenAlex but never use the query phrases ("continual learners", "forgetting" without "catastrophic"). The 4 papers lost to the focus rule are CL papers that name the field only once in the abstract. The check set was itself found by searching for CL, so these are upper bounds. List: [`validation/recall_check.csv`](validation/recall_check.csv); per-paper result: [`results/recall_check.csv`](results/recall_check.csv); `make recall` re-runs it.
 
 ## Sub-areas (F2)
 
@@ -264,6 +264,7 @@ src/clbib/
   fetch.py        OpenAlex cursor pagination, resumable
   clean.py        parquet tables (works, authorships, references) and dedup
   growth.py       F1 tables and figure
+  recall.py       recall check against 45 scout-confirmed papers
   subareas.py     F2 rule-based tags
   validate.py     sample drawing and rule scoring
   llm_label.py    LLM labellers and pairwise agreement

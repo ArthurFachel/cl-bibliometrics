@@ -1,0 +1,46 @@
+arxiv_id,title,work_id,matched_via,found,in_scope,in_analysis,focused
+2604.04154,Non-Equilibrium Stochastic Dynamics as a Unified Framework for Insight and Repetitive Learning: A Kramers Escape Approach to Continual Learning,https://openalex.org/W7151435406,doi,true,true,true,true
+2604.24637,Cortex-Inspired Continual Learning: Unsupervised Instantiation and Recovery of Functional Task Networks,https://openalex.org/W7156941771,doi,true,true,true,true
+2604.27031,NORACL: Neurogenesis for Oracle-free Resource-Adaptive Continual Learning,https://openalex.org/W7159652009,doi,true,true,true,true
+2605.02509,MPCS: Neuroplastic Continual Learning via Multi-Component Plasticity and Topology-Aware EWC,https://openalex.org/W7160240942,doi,true,true,true,true
+2605.06834,Attribution-Based Neuron Utility for Plasticity Restoration in Deep Networks,https://openalex.org/W7160827984,doi,true,true,true,true
+2605.10178,Joint sparse coding and temporal dynamics support context reconfiguration,https://openalex.org/W7160911801,doi,true,true,true,true
+2605.15877,Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?,https://openalex.org/W7161576488,doi,true,true,true,true
+2606.20431,"Sparsity, Superposition, and Forgetting: A Mechanistic Study of Representation Retention in Continual Learning",https://openalex.org/W7165397749,doi,true,true,true,true
+2606.26629,From Weights to Features: SAE-Guided Activation Regularization for LLM Continual Learning,https://openalex.org/W7166154234,doi,true,true,true,true
+2607.09202,Interference and Retention in Continual Learning,https://openalex.org/W7168138637,doi,true,true,true,true
+2607.11020,Can a Language Model Learn Facts Continually in Its Weights?,https://openalex.org/W7168243134,doi,true,true,true,true
+2607.24996,Calibrated Partial Resets: Preventing Policy Collapse in Continual Reinforcement Learning,https://openalex.org/W7171685224,doi,true,true,true,false
+2607.26523,The Art of Not Forgetting A Local Learning Architecture for Continual Learning,https://openalex.org/W7171804981,doi,true,true,true,true
+2608.16141,Continual-learning rules shape representational drift,https://openalex.org/W7203728228,doi,true,true,true,true
+2609.06530,Selective Knowledge Control for Continual GUI Agent Learning over Application Streams,https://openalex.org/W7212076070,doi,true,true,true,true
+2609.25735,Beyond Class Marginals: Bounding Rehearsal Gaps without Freezing Class Co-occurrence,,,false,false,false,false
+2609.33620,"Learning Dynamics of Continual Learning: A Unified View of Data Attribution, Forgetting, and Plasticity Loss",https://openalex.org/W7214741221,doi,true,true,true,true
+2610.00431,ChainLoRA: Geometry-Preserving Task Vector Merging for Continual Learning in LLMs,https://openalex.org/W7216251542,doi,true,true,true,true
+2610.01418,SpikeMoE: Brain-Inspired Competitive Routing for Flexible Spiking Mixture-of-Experts,,,false,false,false,false
+2610.01590,Two Routes to the Middle: Placement Search and Brain Readouts Converge on Where Continual Learners Should Specialize,,,false,false,false,false
+2610.02126,Local Support Learning,https://openalex.org/W7216419076,doi,true,true,true,true
+2610.02283,MuLoRA: Spectrally Balanced Low-Rank Adaptation for Continual Learning,https://openalex.org/W7220378430,doi,true,true,true,true
+2610.03079,RIFAR: Reliability and Forgetting-Aware Replay for Continual Robot Learning,https://openalex.org/W7220380598,doi,true,true,true,true
+2610.03713,What Should World Models Forget? Stratified Retention for Continual Adaptation,https://openalex.org/W7220477396,doi,true,true,true,true
+2610.04226,PaLoRA: Paced Low-Rank Adaptation for Continual Learning,https://openalex.org/W7220682890,doi,true,true,true,true
+2610.05200,Learning without Overwriting: A Theory of Self-Distillation and Supervised Fine-Tuning in Continual Reasoning,https://openalex.org/W7220683570,doi,true,true,true,true
+2610.05872,Off-Policy Merging Beats On-Policy Self-Distillation for Continual Learning,https://openalex.org/W7220652335,doi,true,true,true,true
+2610.07008,Learning to Curate What You Generate for Generalizable Few-Shot Class-Incremental Learning,https://openalex.org/W7221033759,doi,true,true,true,true
+2610.08312,CoDe-LoRA: Mitigating the Orthogonality Dilemma in Continual Learning of LLMs via Knowledge Consolidation and Decoupling,https://openalex.org/W7221053027,doi,true,true,true,true
+2610.08718,When Forgetting is not Catastrophic: On the Mechanics of Spurious Forgetting,,,false,false,false,false
+2610.09835,A Deafening Silence: Catastrophic Forgetting Lives in the Output Embeddings of Tokens the Data Never Speaks,https://openalex.org/W7220977103,doi,true,true,true,true
+2610.10379,Continual Learning without Continual Training,https://openalex.org/W7221010873,doi,true,true,true,true
+2610.11373,From a Prompt to Repertoires: Evolving Functional REpertoires Enable LLM Continual Learning,https://openalex.org/W7221164499,doi,true,true,true,true
+2610.12602,Self-Preservation in Language Models,https://openalex.org/W7221545612,doi,true,true,true,true
+2610.13816,Dream to Remember: Continual Steering of Generalist Robot Policies with World Models,https://openalex.org/W7221563754,doi,true,true,true,true
+2610.14258,Do Artificial Neural Networks Need Dendritic Nanotubes? Two Reasons for Shrinking Importance Estimates in Continual Learning,https://openalex.org/W7221807567,doi,true,true,true,true
+2610.15492,When Skills Remain But Access Fails: Factorized Skill Memory for Continual Skill Internalization,,,false,false,false,false
+2610.17713,"Confine to the Task, Anchor the Rest: Concept-Guided Retention Regularizer for Parameter-Efficient Fine-Tuning",https://openalex.org/W7221765448,doi,true,true,true,false
+2610.18038,Data-Free Continual Learning for World Action Model with Rectified Generative Replay,https://openalex.org/W7221801359,doi,true,true,true,true
+2610.19876,SPARS: A Stability-Plasticity-Aware Region Selection Framework for Continual Learning,https://openalex.org/W7222269442,doi,true,true,true,true
+2610.20804,Optimal Explicit and Implicit Regularization Strengths in High-Dimensional Continual Linear Regression,https://openalex.org/W7222429506,doi,true,true,true,false
+2610.21336,Ranking and Partitioning of Attention Heads for Sparse and Continual Reinforcement Learning Fine-tuning,https://openalex.org/W7222571254,doi,true,true,true,false
+2610.21537,Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models,https://openalex.org/W7222495951,doi,true,true,true,true
+2610.22137,CART: Compatible Routing for Multimodal Continual Instruction Tuning,https://openalex.org/W7222852325,title,true,true,true,true
+2610.22293,Towards Continual Learning: Mitigating Forgetting With Subspace Tuning,https://openalex.org/W7222526522,doi,true,true,true,true
