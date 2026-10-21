@@ -67,6 +67,22 @@ BENCHMARKS: dict[str, tuple[str, str, list[str]]] = {
     "VQA / CoIN": ("NLP & LLM", r"\bvqa\b|(?-i)\bCoIN\b", ["W4392822544"]),
 }
 ROUND1_NAMES = list(BENCHMARKS)  # the detector scored in round 1 (frozen at 8381df9); never edit
+# Round 2 (2026-10-21): round-1 validation found NLP & LLM recall 0.19, so more
+# language datasets are named here. Mention-only (no citation anchors).
+BENCHMARKS.update({
+    "Event / relation / NER": ("NLP & LLM", r"(?-i)\bACE ?(2004|2005|05)\b|\bMAVEN\b|\bFewRel\b|\bTACRED\b"
+                               r"|\bCoNLL(-| )?(2003|03)\b|\bOntoNotes\b|(?i)few-?nerd", []),
+    "QA / reading": ("NLP & LLM", r"(?-i)\bSQuAD\b|(?i)natural questions|trivia ?qa|hotpot ?qa"
+                     r"|(?-i)\bCoQA\b|\bQuAC\b|\bBoolQ\b|\bNarrativeQA\b", []),
+    "LLM suites": ("NLP & LLM", r"(?-i)\bFLAN\b|\bAlpaca\b|\bMT-Bench\b|\bBIG-?[Bb]ench\b|\bHumanEval\b|\bMBPP\b"
+                   r"|\bHellaSwag\b|\bPIQA\b|\bWinoGrande\b|\bTruthfulQA\b|\bARC-(Easy|Challenge)\b", []),
+    "Captioning / multimodal": ("NLP & LLM", r"(?i)coco captions?|ms-?coco caption|flickr-?30k|\bnocaps\b"
+                                r"|(?-i)\bGQA\b|\bTextVQA\b|\bScienceQA\b|\bOK-VQA\b|\bVizWiz\b|\bMMBench\b|\bCLiMB\b", []),
+    "Dialogue / generation / LM": ("NLP & LLM", r"(?i)multi-?woz|persona-?chat|(?-i)\bWMT ?'?\d{2}\b|\bIWSLT\b"
+                                   r"|(?i)cnn ?/ ?daily ?mail|(?-i)\bXSum\b|\bWikiText(-103|-2)?\b|(?i)penn treebank", []),
+    "Text classification (GLUE tasks, intents)": ("NLP & LLM", r"(?-i)\bSST-?2\b|\bIMDB\b|\bMNLI\b|\bSNLI\b|\bQNLI\b"
+                                                  r"|\bQQP\b|\bCLINC(150)?\b|\bBANKING77\b|\bHWU64\b|\b20 ?Newsgroups\b", []),
+})
 # Text removed before matching a benchmark, so that e.g. "ImageNet-R" or
 # "mini-ImageNet" does not also count as ImageNet (polars regex has no lookahead).
 STRIP = {
