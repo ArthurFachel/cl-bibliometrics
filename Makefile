@@ -1,7 +1,7 @@
 PY := .venv/bin/python
 RUN := PYTHONPATH=src $(PY) -m
 
-.PHONY: all fetch clean growth recall subareas validate networks benchmarks drivers sensitivity test refetch
+.PHONY: all fetch clean growth recall subareas validate networks benchmarks drivers sensitivity report test refetch
 
 all: fetch clean growth recall subareas validate networks benchmarks drivers sensitivity
 
@@ -49,6 +49,10 @@ benchmarks:
 
 drivers:
 	$(RUN) clbib.drivers
+
+# docs/report.pdf from docs/report.md (needs a python3 with `markdown` and LibreOffice; not part of all)
+report:
+	scripts/build_report.sh
 
 # Same analyses with repository-only works kept (results/sensitivity_with_repository_only/),
 # then results/sensitivity.csv compares the headline numbers.
