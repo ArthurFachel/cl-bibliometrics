@@ -7,6 +7,7 @@ authors:
     family-names: Fachel
     affiliation: "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)"
     orcid: "https://orcid.org/0009-0002-9903-6590"
+doi: "10.5281/zenodo.23525601"  # concept DOI, resolves to the latest version
 repository-code: "https://github.com/ArthurFachel/cl-bibliometrics"
 abstract: >-
   Reproducible bibliometric study of continual learning and catastrophic

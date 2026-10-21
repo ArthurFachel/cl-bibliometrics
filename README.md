@@ -1,10 +1,12 @@
 # Continual Learning Bibliometrics
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23525601.svg)](https://doi.org/10.5281/zenodo.23525601)
+
 How did continual learning research move from small vision benchmarks to large language models, and who drove that shift?
 
 A reproducible bibliometric dataset of continual learning and catastrophic forgetting research, built from [OpenAlex](https://openalex.org), with every number traceable to a dated API snapshot.
 
-3-page summary: [`docs/report.pdf`](docs/report.pdf). Processed data and report: [latest release](https://github.com/ArthurFachel/cl-bibliometrics/releases/latest). How to cite: [`CITATION.cff`](CITATION.cff).
+3-page summary: [`docs/report.pdf`](docs/report.pdf). Processed data and report: [latest release](https://github.com/ArthurFachel/cl-bibliometrics/releases/latest). How to cite: Fachel, A. (2026). *Continual Learning Bibliometrics*. Zenodo. [doi:10.5281/zenodo.23525601](https://doi.org/10.5281/zenodo.23525601) ([`CITATION.cff`](CITATION.cff)).
 
 ![Who wrote PEFT/LLM work and whose work the field built on](figures/drivers.png)
 
