@@ -28,4 +28,14 @@ round-2 labels are seen; a further change would need a round 3 on a new sample.
 
 ## Outcome
 
-(filled in after scoring)
+Scored on 2026-10-21 (`results/nlp_validation_round2.csv`), 300/300 works labelled by all three models.
+NLP & LLM against the majority vote, stratum-weighted, 95% bootstrap intervals:
+
+| detector | precision | recall |
+|---|---|---|
+| round 1 | 1.00 (1.00-1.00) | 0.14 (0.07-0.24) |
+| layer 1 | 0.98 (0.92-1.00) | 0.25 (0.16-0.41) |
+| layer 1 + 2 | 0.68 (0.59-0.77) | 0.42 (0.28-0.68) |
+
+Layer 2 precision 0.68 is below the 0.85 bar, so `NLP_LAYER2` stays False and findings use layer 1.
+Labeller agreement on `nlp_llm`: kappa 0.90 (Opus-Sonnet), 0.62 and 0.66 (each against DeepSeek).

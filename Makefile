@@ -36,6 +36,7 @@ validate:
 	$(RUN) clbib.llm_label compare --split test
 	$(RUN) clbib.country_validate score
 	$(RUN) clbib.benchmark_validate score
+	$(RUN) clbib.nlp_validate score
 
 test:
 	PYTHONPATH=src $(PY) -m unittest discover -s tests -v

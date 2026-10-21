@@ -1,0 +1,11 @@
+detector,family,sample_pos,detector_pos,precision,precision_ci,recall,recall_ci
+round 1,NLP & LLM,77,22,1.0,1.0-1.0,0.14,0.07-0.24
+layer 1,NLP & LLM,77,42,0.98,0.92-1.0,0.25,0.16-0.41
+layer 1 + 2,MNIST-scale,10,9,1.0,1.0-1.0,0.86,0.57-1.0
+layer 1 + 2,CIFAR,19,19,1.0,1.0-1.0,1.0,1.0-1.0
+layer 1 + 2,ImageNet-scale,8,7,1.0,1.0-1.0,0.77,0.31-1.0
+layer 1 + 2,CL-native,5,0,,None-None,0.0,0.0-0.0
+layer 1 + 2,pre-trained era,10,7,1.0,1.0-1.0,0.88,0.59-1.0
+layer 1 + 2,detection & segmentation,10,3,1.0,1.0-1.0,0.07,0.0-0.25
+layer 1 + 2,RL,4,1,1.0,1.0-1.0,0.31,0.0-1.0
+layer 1 + 2,NLP & LLM,77,100,0.68,0.59-0.77,0.42,0.28-0.68
