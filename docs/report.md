@@ -1,6 +1,6 @@
 # Who moved continual learning to LLMs? A bibliometric study of OpenAlex
 
-Arthur Fachel, Data Science, PUCRS. Snapshot of 2026-10-19. Code, data and every table: https://github.com/ArthurFachel/cl-bibliometrics (release v1.0.0).
+Arthur Fachel, Data Science, PUCRS. Snapshot of 2026-10-19. Code, data and every table: https://github.com/ArthurFachel/cl-bibliometrics (release v1.0.1).
 
 ## Question
 
@@ -46,4 +46,4 @@ The growth, the PEFT/LLM share and the country shares are backed by held-out val
 
 ## Reproduce
 
-`make all` rebuilds everything from the OpenAlex API. Without an API key, the processed tables attached to release v1.0.0 cover every step except the download.
+`make all` rebuilds everything from the OpenAlex API. Without an API key, the processed tables attached to each release cover every step except the download.

@@ -28,7 +28,7 @@ round-2 labels are seen; a further change would need a round 3 on a new sample.
 
 ## Outcome
 
-Scored on 2026-10-21 (`results/nlp_validation_round2.csv`), 300/300 works labelled by all three models.
+Scored on 2026-10-20 (`results/nlp_validation_round2.csv`), 300/300 works labelled by all three models.
 NLP & LLM against the majority vote, stratum-weighted, 95% bootstrap intervals:
 
 | detector | precision | recall |

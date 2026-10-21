@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it as below."
+title: "Continual Learning Bibliometrics: who moved continual learning to LLMs"
+type: software
+authors:
+  - given-names: Arthur
+    family-names: Fachel
+    affiliation: "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)"
+    orcid: "https://orcid.org/0009-0002-9903-6590"
+repository-code: "https://github.com/ArthurFachel/cl-bibliometrics"
+abstract: >-
+  Reproducible bibliometric study of continual learning and catastrophic
+  forgetting research, built from an OpenAlex snapshot of 2026-10-19
+  (9,326 focused works). It measures growth, sub-areas, countries and
+  institutions, benchmark migration, and who drove the shift to LLMs and
+  pre-trained models, with every rule validated against three LLM labellers
+  on held-out samples.
+keywords:
+  - continual learning
+  - catastrophic forgetting
+  - bibliometrics
+  - scientometrics
+  - OpenAlex
+  - large language models
+license: MIT
+version: 1.0.1
+date-released: "2026-10-21"

@@ -69,7 +69,7 @@ BENCHMARKS: dict[str, tuple[str, str, list[str]]] = {
     "VQA / CoIN": ("NLP & LLM", r"\bvqa\b|(?-i)\bCoIN\b", ["W4392822544"]),
 }
 ROUND1_NAMES = list(BENCHMARKS)  # the detector scored in round 1 (frozen at 8381df9); never edit
-# Round 2 (2026-10-21): round-1 validation found NLP & LLM recall 0.19, so more
+# Round 2 (2026-10-20): round-1 validation found NLP & LLM recall 0.19, so more
 # language datasets are named here. Mention-only (no citation anchors).
 BENCHMARKS.update({
     "Event / relation / NER": ("NLP & LLM", r"(?-i)\bACE ?(2004|2005|05)\b|\bMAVEN\b|\bFewRel\b|\bTACRED\b"

@@ -4,7 +4,7 @@ How did continual learning research move from small vision benchmarks to large l
 
 A reproducible bibliometric dataset of continual learning and catastrophic forgetting research, built from [OpenAlex](https://openalex.org), with every number traceable to a dated API snapshot.
 
-3-page summary: [`docs/report.pdf`](docs/report.pdf). Processed data and report: [release v1.0.0](https://github.com/ArthurFachel/cl-bibliometrics/releases/tag/v1.0.0).
+3-page summary: [`docs/report.pdf`](docs/report.pdf). Processed data and report: [latest release](https://github.com/ArthurFachel/cl-bibliometrics/releases/latest). How to cite: [`CITATION.cff`](CITATION.cff).
 
 ![Who wrote PEFT/LLM work and whose work the field built on](figures/drivers.png)
 
@@ -274,7 +274,7 @@ make all                       # fetch -> clean -> growth -> subareas -> validat
 make test
 ```
 
-No API key? Download `cl-bibliometrics-processed-2026-10-19.zip` from [release v1.0.0](https://github.com/ArthurFachel/cl-bibliometrics/releases/tag/v1.0.0), unzip it at the repo root, and run any target except `fetch` and `clean`. A 3-page summary is in [`docs/report.pdf`](docs/report.pdf) (`make report` rebuilds it).
+No API key? Download `cl-bibliometrics-processed-2026-10-19.zip` from the [latest release](https://github.com/ArthurFachel/cl-bibliometrics/releases/latest), unzip it at the repo root, and run any target except `fetch` and `clean`. A 3-page summary is in [`docs/report.pdf`](docs/report.pdf) (`make report` rebuilds it).
 
 Raw API pages are kept gzipped under `data/raw/openalex/<query>/` with a manifest (filter, counts, fetch date). `data/` isn't versioned; `results/`, `figures/` and the label files in `validation/` are.
 
