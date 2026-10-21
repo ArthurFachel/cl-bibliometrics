@@ -109,7 +109,7 @@ def weighted_pr(y: list[int], p: list[int], w: list[float]) -> tuple[float | Non
 
 def bootstrap(y, p, w, strata, n: int = 1000) -> tuple:
     rng = random.Random(SEED)
-    idx = {s: [i for i, x in enumerate(strata) if x == s] for s in set(strata)}
+    idx = {s: [i for i, x in enumerate(strata) if x == s] for s in sorted(set(strata))}  # sorted: set order varies per process
     ps, rs = [], []
     for _ in range(n):
         pick = [rng.choice(ix) for ix in idx.values() for _ in ix]

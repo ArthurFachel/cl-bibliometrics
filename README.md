@@ -164,13 +164,13 @@ Spot-check snippets for every benchmark: [`results/benchmark_audit.csv`](results
 | family | sample positives | precision | recall (95% CI) |
 |---|---|---|---|
 | MNIST-scale | 37 | 1.00 | 0.97 (0.91-1.00) |
-| CIFAR | 91 | 1.00 | 0.92 (0.86-0.98) |
+| CIFAR | 91 | 1.00 | 0.92 (0.87-0.98) |
 | ImageNet-scale | 52 | 0.95 | 1.00 |
 | pre-trained era | 25 | 1.00 | 1.00 |
-| detection & segmentation | 17 | 1.00 | 0.47 (0.23-1.00) |
-| CL-native | 10 | 1.00 | 0.49 (0.19-1.00) |
+| detection & segmentation | 17 | 1.00 | 0.47 (0.24-1.00) |
+| CL-native | 10 | 1.00 | 0.49 (0.18-1.00) |
 | RL | 5 | 1.00 | 0.43 (0.09-1.00) |
-| NLP & LLM | 23 | 1.00 | 0.19 (0.09-0.39) |
+| NLP & LLM | 23 | 1.00 | 0.19 (0.09-0.37) |
 
 - The vision families that carry the MNIST -> CIFAR -> pre-trained story are detected reliably, so that part of the trend stands.
 - Precision is near 1 everywhere: when the detector names a family, the paper uses it.
