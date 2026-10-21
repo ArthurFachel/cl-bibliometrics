@@ -1,6 +1,6 @@
 # Who moved continual learning to LLMs? A bibliometric study of OpenAlex
 
-Arthur Fachel, Data Analytics, PUCRS. Snapshot of 2026-10-19. Code, data and every table: https://github.com/ArthurFachel/cl-bibliometrics (release v1.0.0).
+Arthur Fachel, Data Science, PUCRS. Snapshot of 2026-10-19. Code, data and every table: https://github.com/ArthurFachel/cl-bibliometrics (release v1.0.0).
 
 ## Question
 
