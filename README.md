@@ -1,4 +1,4 @@
-# cl-bibliometrics
+# Continual Learning Bibliometrics
 
 How did continual learning research move from small vision benchmarks to large language models, and who drove that shift?
 
