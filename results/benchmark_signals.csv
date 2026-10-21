@@ -19,3 +19,9 @@ GLUE,NLP & LLM,13,31,5,39,true
 SuperNI / TRACE,NLP & LLM,10,10,0,20,true
 MMLU / GSM8K,NLP & LLM,22,5,0,27,true
 VQA / CoIN,NLP & LLM,31,1,0,32,true
+Event / relation / NER,NLP & LLM,19,0,0,19,false
+QA / reading,NLP & LLM,6,0,0,6,false
+LLM suites,NLP & LLM,12,0,0,12,false
+Captioning / multimodal,NLP & LLM,10,0,0,10,false
+Dialogue / generation / LM,NLP & LLM,12,0,0,12,false
+"Text classification (GLUE tasks, intents)",NLP & LLM,9,0,0,9,false

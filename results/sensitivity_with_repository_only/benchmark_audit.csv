@@ -81,3 +81,27 @@ VQA / CoIN,https://openalex.org/W4416798076,"age content, particularly in tasks 
 VQA / CoIN,https://openalex.org/W4414272128,nduct experiments on challenging continual visual question answering (VQA-CL) benchmarks. The results demonstrate that DRDF
 VQA / CoIN,https://openalex.org/W7214228442,sual Question Answering in Robotic Surgery Visual question answering (VQA) is crucial for promoting surgical education. In 
 VQA / CoIN,https://openalex.org/W4415350854," Question Answering Objective: Medical Visual Question Answering (Med-VQA), a key technology that integrates computer visio"
+Event / relation / NER,https://openalex.org/W4402353019,". We perform extensive experiments on the two commonly used datasets, TACRED and FewRel. Experimental results show that our me"
+Event / relation / NER,https://openalex.org/W4317382971,ations obtained through the data augmentation process. Experiments on FewRel and TACRED datasets reveal that our method perfor
+Event / relation / NER,https://openalex.org/W4411505010,etting of previously acquired knowledge. Experiments conducted on the TACRED dataset show that after completing all tasks unde
+Event / relation / NER,https://openalex.org/W7131779098,". Extensive experiments on two benchmark datasets, i.e., FewEvent and MAVEN, demonstrate the superior performance of Prompt-K"
+QA / reading,https://openalex.org/W7168048115,"We show that at our operating point (OLMo-2-1B, LoRA r=16, GSM8K then SQuAD, 500 steps per stage, 3 seeds) this total behavio"
+QA / reading,https://openalex.org/W4407181168," to compete on three NLP benchmarks which included GLUE, AG News, and SQuAD against top performing methods such as EWC, SI, a"
+QA / reading,https://openalex.org/W4409348007,"ts conducted on three continual learning datasets (i.e., StreamingQA, SQuAD and ArchivalQA) demonstrate that the proposed met"
+QA / reading,https://openalex.org/W4407141281,"ive experiments on standard NLP benchmarks such as GLUE, AG News, and SQuAD. Among baseline methods (EWC, SI, and GEM), the m"
+LLM suites,https://openalex.org/W7162545091,"d sufficient: our final configuration achieves 0.43% MMLU drop, 0.58% HellaSwag drop, and 0.22% ARC-Challenge drop versus a match"
+LLM suites,https://openalex.org/W7204199340,reserving generative perplexity (PPL 172.65) and zero-shot reasoning (PIQA 64.53%)—demonstrating competitive performance rel
+LLM suites,https://openalex.org/W4416440147,"a novel vision-in-text task (Textual MNIST) and measure forgetting on PIQA, HellaSwag, and GSM8k. SmolLM2-1.7B-Instruct init"
+LLM suites,https://openalex.org/W7168996765,"independent capability axes — general knowledge/reasoning (MMLU, ARC, HellaSwag), code generation (MBPP), and biomedical knowledg"
+Captioning / multimodal,https://openalex.org/W4362707238,"knowledge from previously-learned tasks' Adapters. We evaluate I2I on CLiMB, a multimodal continual learning benchmark, by co"
+Captioning / multimodal,https://openalex.org/W7154732929,sks based on modality-specific sensitivity. Experiments on VQA v2 and GQA under continual VQA settings show that AIM achiev
+Captioning / multimodal,https://openalex.org/W4385571136,"eriments, we split a domain-specific image captioning dataset, namely VizWiz, into non-overlapping parts to simulate an increm"
+Captioning / multimodal,https://openalex.org/W7133207018,CLiMB: A Continual Learning Benchmark for Vision-And-La
+Dialogue / generation / LM,https://openalex.org/W7171537548,".89$, holds unchanged on six third-party adapters, and predicts where WikiText-2 perplexity begins to degrade; a combination of th"
+Dialogue / generation / LM,https://openalex.org/W3200638010,gating exposure bias and retaining output quality. Experiments on two IWSLT'14 translation tasks demonstrate that our approac
+Dialogue / generation / LM,https://openalex.org/W7204199340,"ng raw text samples degrades the pre-trained language model backbone (WikiText-2 PPL increases from ~172 to >3,600). To address th"
+Dialogue / generation / LM,https://openalex.org/W4414597595,",020 updates with 1% growth per increment. In experiments on combined WikiText and FB15k datasets (scaled to 2,997 nodes), we de"
+"Text classification (GLUE tasks, intents)",https://openalex.org/W3193091643,"evious state-of-the-art lifelong learning methods on the ATIS, SNIPS, HWU64, and CLINC150 benchmarks."
+"Text classification (GLUE tasks, intents)",https://openalex.org/W7160598367,"inual NLP. The central finding is empirical: across three benchmarks (20 Newsgroups, AG News, CoNLL-2003 NER), five seeds and two tas"
+"Text classification (GLUE tasks, intents)",https://openalex.org/W7213494480,Financial PhraseBank (target domain) and Stanford Sentiment Treebank (SST-2 anchor domain) demonstrates that OT-LoRA achieves
+"Text classification (GLUE tasks, intents)",https://openalex.org/W4417231382,"llion parameters) on key NLU tasks from the GLUE benchmark, including SST-2, MRPC, CoLA, and MNLI. By employing prompt engine"

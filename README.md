@@ -10,7 +10,7 @@ A reproducible bibliometric dataset of continual learning and catastrophic forge
 - **The field grew about 2.8x in three years.** Works where continual learning is the topic went from 756 first appearing in 2022 to 2,112 in 2025, and 2026 had already passed that (2,133) by October 19.
 - **LLMs took over the growth.** The share of those works that use LLMs, foundation models or parameter-efficient tuning rose from 2.5% in 2019 to 29% in 2025 and 39% in 2026. Replay and regularization held steady at about 30% each. The PEFT/LLM tag scores F1 0.84 on a held-out sample.
 - **China now writes half of it.** Among works with a known affiliation, China's share rose from 19% (2015-2019) to 53% (2023-2026), and the US share fell from 40% to 18%. OpenAlex's China attribution agrees with publisher affiliations in 99% of checked works. Industry co-authorship fell from 24% of works in 2019 to 8% in 2026, but PEFT/LLM works are 1.7x more likely than the rest to have a company author.
-- **Benchmarks moved from MNIST to pre-trained models, and only lately to LLMs.** Among works that name or cite a benchmark, MNIST-scale datasets went from 47% in 2018 to 13% in 2023. Pre-trained-era benchmarks (ImageNet-R, CUB, DomainNet, VTAB) rose from 6% to 25% in 2025. Language benchmarks stayed under 5% until 2024 and reached 11% in 2026, but that's a floor: the detector finds only about one in five language-benchmark papers. CIFAR stays the default throughout.
+- **Benchmarks moved from MNIST to pre-trained models, and only lately to LLMs.** Among works that name or cite a benchmark, MNIST-scale datasets went from 47% in 2018 to 12% in 2023. Pre-trained-era benchmarks (ImageNet-R, CUB, DomainNet, VTAB) rose from 6% to 24% in 2025. Language benchmarks stayed at 4-6% through 2024 and reached 14% in 2026, but that's a floor: on a fresh validation sample the detector finds only about one in four language-benchmark papers. CIFAR stays the default throughout.
 - **arXiv matters less than it did.** 57% of focused works were also on arXiv in 2019, against 38% in 2025. The broad corpus shows the same drop (54% -> 37%), so it isn't an artefact of the focus rule.
 - **Brazil is marginal.** 32 focused works since 2015 (rank 30, under 0.5% of the field), led by UNICAMP and UFPE.
 - **Keyword search over-collects.** 10-22% of works matched by the queries only mention continual learning in passing, depending on which labeller is asked. That's why all findings use a stricter focused corpus (precision 0.93-0.98 on held-out data).
@@ -28,7 +28,7 @@ None of these findings changes when works that exist only on deposit repositorie
 | F1 | How fast is the field growing, and how much of it lives on arXiv? | done |
 | F2 | Which sub-areas drive the growth? | done: rule-based tags, validated on a held-out sample |
 | F3 | Who collaborates with whom? Which institutions and countries are central? Where does Brazil sit? | done: countries, industry, institution network, Brazil; countries checked against Crossref |
-| F4 | When did benchmarks migrate (Permuted MNIST -> Split CIFAR -> ImageNet-R -> LLM suites)? | done: abstract mentions + dataset citations, scored against three LLM labellers; NLP & LLM undercounted |
+| F4 | When did benchmarks migrate (Permuted MNIST -> Split CIFAR -> ImageNet-R -> LLM suites)? | done: abstract mentions + dataset citations, scored against three LLM labellers in two rounds; NLP & LLM recall 0.25 |
 | F5 | Who drove the shift to LLMs and pre-trained models? | done: early adopters and in-corpus citation influence |
 
 ## Corpus
@@ -139,21 +139,21 @@ Full tables: [`results/country_validation.csv`](results/country_validation.csv),
 
 ![Benchmarks](figures/benchmarks.png)
 
-Since 2018, only 16-49% of works per year name or cite any benchmark, and the share falls after 2021 because OpenAlex reference lists thin out (46% of 2026 works have one). So the table reports the **mix**: among works that name or cite a benchmark, the share in each family. The mention-only column checks that a trend isn't produced by the shrinking citation signal.
+Since 2018, only 17-49% of works per year name or cite any benchmark, and the share falls after 2021 because OpenAlex reference lists thin out (46% of 2026 works have one). So the table reports the **mix**: among works that name or cite a benchmark, the share in each family. The mention-only column checks that a trend isn't produced by the shrinking citation signal.
 
 | family | 2018 | 2021 | 2023 | 2025 | 2026 | 2026, mention only |
 |---|---|---|---|---|---|---|
-| works with a benchmark | 47 | 294 | 408 | 506 | 338 | 197 |
-| MNIST-scale | 47% | 21% | 13% | 15% | 18% | 24% |
-| CIFAR | 53% | 61% | 63% | 39% | 33% | 56% |
-| ImageNet-scale | 40% | 44% | 53% | 48% | 39% | 24% |
-| pre-trained era (ImageNet-R, CUB, DomainNet, VTAB) | 6.4% | 13% | 16% | 25% | 20% | 15% |
-| NLP & LLM | 0% | 3.1% | 4.2% | 7.9% | 11% | 16% |
+| works with a benchmark | 47 | 297 | 415 | 513 | 350 | 209 |
+| MNIST-scale | 47% | 21% | 12% | 15% | 17% | 22% |
+| CIFAR | 53% | 60% | 61% | 38% | 31% | 53% |
+| ImageNet-scale | 40% | 44% | 53% | 47% | 37% | 22% |
+| pre-trained era (ImageNet-R, CUB, DomainNet, VTAB) | 6.4% | 12% | 16% | 24% | 20% | 14% |
+| NLP & LLM | 0% | 4.0% | 6.3% | 9.4% | 14% | 21% |
 
 - The MNIST decline (2018-2023) and the late arrival of language benchmarks hold under both signals.
 - CIFAR's drop after 2024 appears only with citations; by mentions it stays above 50%, so it's a coverage effect, not a real decline.
-- MNIST-scale climbs back to 18-24% in 2025-2026. It survives the repository filter, so it isn't Zenodo noise, but it isn't explained yet and isn't interpreted.
-- Language benchmarks lag the PEFT/LLM tag (39% of 2026 works) partly because many of those papers apply prompts or adapters to pre-trained vision models and evaluate on vision benchmarks, and partly because the detector misses most language datasets (see below).
+- MNIST-scale climbs back to 17-22% in 2026. It survives the repository filter, so it isn't Zenodo noise, but it isn't explained yet and isn't interpreted.
+- Language benchmarks (14% in 2026) lag the PEFT/LLM tag (39% of 2026 works) partly because many of those papers apply prompts or adapters to pre-trained vision models and evaluate on vision benchmarks, and partly because the detector still misses about three in four language datasets (see below).
 
 Spot-check snippets for every benchmark: [`results/benchmark_audit.csv`](results/benchmark_audit.csv). Mention and citation counts: [`results/benchmark_signals.csv`](results/benchmark_signals.csv).
 
@@ -174,10 +174,26 @@ Spot-check snippets for every benchmark: [`results/benchmark_audit.csv`](results
 
 - The vision families that carry the MNIST -> CIFAR -> pre-trained story are detected reliably, so that part of the trend stands.
 - Precision is near 1 everywhere: when the detector names a family, the paper uses it.
-- NLP & LLM recall is about 0.19. Language CL papers use a long tail of task datasets (ACE and MAVEN for event detection, COCO captions, instruction-tuning streams, new benchmarks built by the paper) that a fixed list of 20 benchmarks doesn't cover. The language shares in the table above are a lower bound, and the lag behind the PEFT/LLM tag is partly a measurement artefact.
+- NLP & LLM recall of this first detector is about 0.19. Language CL papers use a long tail of task datasets (ACE and MAVEN for event detection, COCO captions, instruction-tuning streams, new benchmarks built by the paper) that a fixed list of 20 benchmarks doesn't cover. Round 2 below extends the list.
 - Labellers agree with each other at kappa 0.96 or higher on MNIST-scale, CIFAR, ImageNet-scale and pre-trained era, and 0.74-0.76 for DeepSeek against the two Claude models on CL-native, RL and NLP & LLM.
 
 Full tables: [`results/benchmark_validation.csv`](results/benchmark_validation.csv), [`results/benchmark_validation_agreement.csv`](results/benchmark_validation_agreement.csv).
+
+#### Round 2: NLP & LLM on a fresh sample
+
+Round 1 showed the problem, and its 11 missed language papers were read to design the fix, so it can't also test the fix. [`src/clbib/nlp_validate.py`](src/clbib/nlp_validate.py) scores the extended detector on 300 new works (none from round 1), drawn in three strata of 100: works the extended detector flags as NLP & LLM (269 in the population), unflagged works with the PEFT/LLM tag (1,440) and the rest (5,582). Same guide, same three labellers, majority vote, stratum-weighted scores. The test, the sample design and the decision rule were committed before any label existed ([`validation/nlp_round2_prereg.md`](validation/nlp_round2_prereg.md)).
+
+| detector | precision (95% CI) | recall (95% CI) |
+|---|---|---|
+| round 1 (20 named benchmarks) | 1.00 | 0.14 (0.07-0.24) |
+| layer 1: + six groups of named language datasets | 0.98 (0.92-1.00) | 0.25 (0.16-0.41) |
+| layer 1 + 2: + "names an acronym-like dataset in a language paper" | 0.68 (0.59-0.77) | 0.42 (0.28-0.68) |
+
+- The pre-registered rule admitted layer 2 only at precision 0.85 or higher. It reached 0.68, so the findings use layer 1.
+- Layer 1 almost doubles recall at no cost in precision, but three in four language-benchmark papers are still missed. The NLP & LLM shares above stay a lower bound, now a less severe one.
+- Labeller agreement on NLP & LLM: kappa 0.90 between the two Claude models, 0.62-0.66 against DeepSeek.
+
+Full table: [`results/nlp_validation_round2.csv`](results/nlp_validation_round2.csv).
 
 ## Who drove the shift to LLMs
 
@@ -241,8 +257,8 @@ The repository rule was added after the 2026 anomaly was spotted, so it isn't pr
 | PEFT/LLM share, 2026 | 39% | 39% |
 | China share, 2023-2026 | 53% | 53% |
 | company author, PEFT/LLM vs rest | 1.67x | 1.66x |
-| benchmark mix: MNIST-scale, 2026 | 18% | 20% |
-| benchmark mix: NLP & LLM, 2026 | 11% | 14% |
+| benchmark mix: MNIST-scale, 2026 | 17% | 19% |
+| benchmark mix: NLP & LLM, 2026 | 14% | 18% |
 
 Every metric keeps its direction; the largest change is the 2026 volume (-16%). Full table (25 metrics): [`results/sensitivity.csv`](results/sensitivity.csv). The sample used for validation was drawn before the rule and includes 14 repository-only works out of 300, so the precision and F1 above describe a slightly broader corpus.
 
@@ -273,6 +289,7 @@ src/clbib/
   drivers.py      F5 early adopters and citation influence of PEFT/LLM work
   country_validate.py    F3 check: OpenAlex countries vs Crossref affiliations
   benchmark_validate.py  F4 check: benchmark detector vs LLM labellers
+  nlp_validate.py        F4 round 2: NLP & LLM detector on a fresh sample
   sensitivity.py  headline numbers with and without repository-only works
 tests/            parsing, dedup, tag rules, benchmark regexes, network building
 validation/       samples, label files and labelling guide
@@ -283,7 +300,7 @@ validation/       samples, label files and labelling guide
 - Retrieval is keyword-based. Papers that never say "continual learning" or "catastrophic forgetting" (e.g. "model editing", "incremental learning" alone) are missed.
 - Sub-area validation uses LLM labels only. Agreement across three labellers makes the tags more credible, but it isn't a human gold standard.
 - OpenAlex fields, topics and institution data are machine-assigned. Affiliations are missing for 10-39% of works per year, more often on arXiv, and author disambiguation is OpenAlex's.
-- Benchmarks are only visible when an abstract names them or a reference list exists; most papers show neither. Even when the abstract names one, the detector misses about four in five language datasets.
+- Benchmarks are only visible when an abstract names them or a reference list exists; most papers show neither. Even when the abstract names one, the detector misses about three in four language datasets (round-2 recall 0.25).
 - The country check covers only works with a non-arXiv DOI and Crossref affiliations, and only 30 works without an OpenAlex country.
 - The repository rule is source-based. It can't catch low-quality work posted on arXiv, and it drops a legitimate paper that only exists on Zenodo.
 - 2026 is a partial year.

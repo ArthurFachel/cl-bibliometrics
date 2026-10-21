@@ -18,9 +18,9 @@ growth 2022 -> 2025 (x),2.794,2.9,0.106
 "company author, PEFT/LLM vs rest (x)",1.67,1.66,-0.01
 Brazil works,32.0,32.0,0.0
 "benchmark mix: MNIST-scale, 2018",0.468,0.468,0.0
-"benchmark mix: MNIST-scale, 2023",0.125,0.129,0.004
-"benchmark mix: MNIST-scale, 2026",0.18,0.202,0.021
-"benchmark mix: pre-trained era, 2025",0.247,0.246,-0.001
-"benchmark mix: NLP & LLM, 2026",0.112,0.14,0.028
-"benchmark mix: CIFAR, 2026, mention only",0.558,0.536,-0.022
-"benchmark mix: MNIST-scale, 2026, mention only",0.239,0.262,0.023
+"benchmark mix: MNIST-scale, 2023",0.123,0.127,0.004
+"benchmark mix: MNIST-scale, 2026",0.174,0.193,0.018
+"benchmark mix: pre-trained era, 2025",0.244,0.242,-0.001
+"benchmark mix: NLP & LLM, 2026",0.143,0.18,0.038
+"benchmark mix: CIFAR, 2026, mention only",0.526,0.5,-0.026
+"benchmark mix: MNIST-scale, 2026, mention only",0.225,0.244,0.02

@@ -123,6 +123,7 @@ Same three-labeller setup, with Claude Opus 5.5 in place of the original Claude 
 |---|---|---|---|
 | OpenAlex countries vs Crossref affiliation strings | `countries_to_label.csv`: 164 works with an OpenAlex country, 30 without (from 300 + 200 drawn, seed 20261021; only works with Crossref affiliations kept) | `labels_country_{opus,sonnet,deepseek}.csv` | `GUIDE` in `src/clbib/country_validate.py` |
 | benchmark detector vs title + abstract | `benchmarks_to_label.csv`: 150 detector-positive + 150 detector-negative, seed 20261021 | `labels_bench_{opus,sonnet,deepseek}.csv` | `GUIDE` in `src/clbib/benchmark_validate.py` |
+| round 2, NLP & LLM detector | `nlp_round2_to_label.csv`: 100 per stratum (nlp / peft / other), disjoint from round 1, seed 20261023; pre-registered in `nlp_round2_prereg.md` | `labels_nlp2_{opus,sonnet,deepseek}.csv` | same `GUIDE` |
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m clbib.country_validate label --labeller deepseek --workers 4
