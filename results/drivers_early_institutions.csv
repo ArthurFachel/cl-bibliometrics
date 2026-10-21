@@ -1,0 +1,26 @@
+institution,country,institution_type,early_peft_llm_works
+Tsinghua University,CN,education,12
+Chinese Academy of Sciences,CN,government,11
+Peking University,CN,education,10
+Amazon (United States),US,company,8
+Huawei Technologies (China),CN,company,7
+Peng Cheng Laboratory,CN,facility,7
+University of Chinese Academy of Sciences,CN,education,7
+Carnegie Mellon University,US,education,6
+Nanyang Technological University,SG,education,6
+Tencent (China),CN,company,6
+Georgia Institute of Technology,US,education,5
+Hong Kong University of Science and Technology,HK,education,5
+Mila - Quebec Artificial Intelligence Institute,CA,facility,5
+University of Southern California,US,education,5
+Université de Montréal,CA,education,5
+Alibaba Group (China),CN,company,4
+Beihang University,CN,education,4
+Harbin Institute of Technology,CN,education,4
+KU Leuven,BE,education,4
+King Abdullah University of Science and Technology,SA,education,4
+National University of Defense Technology,CN,education,4
+University of Illinois Chicago,US,education,4
+University of Illinois Urbana-Champaign,US,education,4
+Arizona State University,US,education,3
+ByteDance (China),CN,company,3

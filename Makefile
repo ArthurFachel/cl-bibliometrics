@@ -1,9 +1,9 @@
 PY := .venv/bin/python
 RUN := PYTHONPATH=src $(PY) -m
 
-.PHONY: all fetch clean growth subareas validate networks benchmarks sensitivity test refetch
+.PHONY: all fetch clean growth subareas validate networks benchmarks drivers sensitivity test refetch
 
-all: fetch clean growth subareas validate networks benchmarks sensitivity
+all: fetch clean growth subareas validate networks benchmarks drivers sensitivity
 
 fetch:
 	$(RUN) clbib.fetch
@@ -42,6 +42,9 @@ networks:
 
 benchmarks:
 	$(RUN) clbib.benchmarks
+
+drivers:
+	$(RUN) clbib.drivers
 
 # Same analyses with repository-only works kept (results/sensitivity_with_repository_only/),
 # then results/sensitivity.csv compares the headline numbers.

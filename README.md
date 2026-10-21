@@ -6,6 +6,7 @@ A reproducible bibliometric dataset of continual learning and catastrophic forge
 
 ## Findings (snapshot 2026-10-19)
 
+- **US industry started the shift; China scaled it and now leads it.** Among PEFT/LLM works first seen in 2018-2023, US works got 60% of the field's in-corpus citations with 35% of the output, and works with a company author got 58% with 32%. Two papers carry much of that: Google's L2P and CODA-Prompt (Georgia Tech, IBM, Rice), both about prompting pre-trained vision transformers. Among 2024-2025 works, China writes 59% and gets 77% of the citations. Of the citations made to PEFT/LLM work in 2023, 67% went to US works; in 2026, 35%. See [Who drove the shift](#who-drove-the-shift-to-llms).
 - **The field grew about 2.8x in three years.** Works where continual learning is the topic went from 756 first appearing in 2022 to 2,112 in 2025, and 2026 had already passed that (2,133) by October 19.
 - **LLMs took over the growth.** The share of those works that use LLMs, foundation models or parameter-efficient tuning rose from 2.5% in 2019 to 29% in 2025 and 39% in 2026. Replay and regularization held steady at about 30% each. The PEFT/LLM tag scores F1 0.84 on a held-out sample.
 - **China now writes half of it.** Among works with a known affiliation, China's share rose from 19% (2015-2019) to 53% (2023-2026), and the US share fell from 40% to 18%. OpenAlex's China attribution agrees with publisher affiliations in 99% of checked works. Industry co-authorship fell from 24% of works in 2019 to 8% in 2026, but PEFT/LLM works are 1.7x more likely than the rest to have a company author.
@@ -28,6 +29,7 @@ None of these findings changes when works that exist only on deposit repositorie
 | F2 | Which sub-areas drive the growth? | done: rule-based tags, validated on a held-out sample |
 | F3 | Who collaborates with whom? Which institutions and countries are central? Where does Brazil sit? | done: countries, industry, institution network, Brazil; countries checked against Crossref |
 | F4 | When did benchmarks migrate (Permuted MNIST -> Split CIFAR -> ImageNet-R -> LLM suites)? | done: abstract mentions + dataset citations, scored against three LLM labellers; NLP & LLM undercounted |
+| F5 | Who drove the shift to LLMs and pre-trained models? | done: early adopters and in-corpus citation influence |
 
 ## Corpus
 
@@ -177,6 +179,33 @@ Spot-check snippets for every benchmark: [`results/benchmark_audit.csv`](results
 
 Full tables: [`results/benchmark_validation.csv`](results/benchmark_validation.csv), [`results/benchmark_validation_agreement.csv`](results/benchmark_validation_agreement.csv).
 
+## Who drove the shift to LLMs
+
+[`src/clbib/drivers.py`](src/clbib/drivers.py) looks at the works carrying the PEFT/LLM tag (held-out F1 0.84) and asks two things: who wrote them, and whose work the field built on. Influence is measured with in-corpus citations: a focused work citing a PEFT/LLM work that is also in the corpus. Preprint and published versions are merged through the dedup clusters first. Shares use whole counting over works with a known country, and "company" means at least one company-affiliated author.
+
+![Drivers](figures/drivers.png)
+
+**Who wrote it.** Before the wave (first year 2018-2023, 191 PEFT/LLM works with a known country), China and the US wrote about the same share (38% and 35%), each slightly above its share of other CL work. The clear over-representation was industry: 32% of early PEFT/LLM works had a company author, against 17.5% of other works (1.8x). The institutions with the most early PEFT/LLM works are Tsinghua (12), the Chinese Academy of Sciences (11), Peking University (10), Amazon (8) and Huawei (7) ([`results/drivers_early_institutions.csv`](results/drivers_early_institutions.csv)).
+
+**Whose work got built on.** Citation shares are computed separately for each cohort, so old works aren't favoured over new ones. Works first seen in 2026 are left out: they have 22 in-corpus citations in total.
+
+| cited works | group | share of works | share of citations (95% CI) | age-adjusted | without top 2 |
+|---|---|---|---|---|---|
+| 2018-2023 (1,732 citations) | US | 35% | 60% (36-75%) | 55% | 43% |
+| | company author | 32% | 58% (33-75%) | 54% | 40% |
+| | China | 38% | 25% (14-44%) | 30% | 36% |
+| 2024-2025 (834 citations) | China | 59% | 77% (66-85%) | 73% | 72% |
+| | US | 19% | 13% (7-22%) | 18% | 16% |
+| | company author | 17% | 18% (10-27%) | 18% | 21% |
+
+- The early cited base is US industry. L2P (Google, 2022, 353 in-corpus citations) and CODA-Prompt (Georgia Tech, IBM, Rice, 2023, 168) are the two most cited PEFT/LLM works in the corpus. Without them, US and company works still get more citations than their share of works (43% and 40%), so it isn't only two papers. Both are about prompts on pre-trained vision transformers, which fits the benchmark finding that the pre-trained era started on vision benchmarks.
+- The 2024-2025 cited base is Chinese, and that also holds without the top two. The most cited works are EASE (Nanjing University), MoE-Adapters (Dalian, Tsinghua, UESTC) and InfLoRA. Company authors are cited in line with their share of works: industry no longer leads.
+- By citing year, the share of citations to PEFT/LLM work going to US works peaked at 67% in 2023 and fell to 35% in 2026, while China's rose from 16% to 58% ([`results/drivers_citing_year.csv`](results/drivers_citing_year.csv)).
+
+Most cited PEFT/LLM works with their institutions: [`results/drivers_top_cited.csv`](results/drivers_top_cited.csv). Full tables: [`results/drivers_adopters.csv`](results/drivers_adopters.csv), [`results/drivers_influence.csv`](results/drivers_influence.csv).
+
+Limits of this measure: only citations between works in the corpus count, so influence from outside continual learning (the LLM papers themselves, LoRA, CLIP) isn't measured. Reference lists thin out after 2021, so recent citing years are a sample. The early cohort is small and the intervals are wide. Some top-cited works carry the PEFT/LLM tag only because they adapt a pre-trained model (e.g. *Continual Test-Time Domain Adaptation*), which is within the tag's definition but not LLM work.
+
 ## Validation of the sub-area tags (F2)
 
 The rules were scored against three LLM labellers (Claude, DeepSeek V4 Flash, Claude Sonnet 5) on two disjoint samples of 150 works. The rules were tuned on the dev sample, frozen in commit `098968f`, then scored once on the test sample. None of the labellers saw the rules. There is no human gold set, so these scores measure agreement with models.
@@ -222,7 +251,7 @@ Every metric keeps its direction; the largest change is the 2026 volume (-16%). 
 ```bash
 python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt
 export OPENALEX_API_KEY=...   # free key, https://openalex.org/settings/api
-make all                       # fetch -> clean -> growth -> subareas -> validate -> networks -> benchmarks -> sensitivity
+make all                       # fetch -> clean -> growth -> subareas -> validate -> networks -> benchmarks -> drivers -> sensitivity
 make test
 ```
 
@@ -240,6 +269,7 @@ src/clbib/
   llm_label.py    LLM labellers and pairwise agreement
   networks.py     F3 countries, industry, institution and author networks
   benchmarks.py   F4 benchmark mentions and dataset citations
+  drivers.py      F5 early adopters and citation influence of PEFT/LLM work
   country_validate.py    F3 check: OpenAlex countries vs Crossref affiliations
   benchmark_validate.py  F4 check: benchmark detector vs LLM labellers
   sensitivity.py  headline numbers with and without repository-only works
