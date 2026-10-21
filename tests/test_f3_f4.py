@@ -2,19 +2,14 @@ import unittest
 
 import polars as pl
 
-from clbib.benchmarks import BENCHMARKS, STRIP, rx
+from clbib.benchmarks import ALL_NAMES, mention_flags
 from clbib.networks import institution_graph, per_work
 
 
 def found(text):
-    hits = set()
-    for name, (_, pat, _) in BENCHMARKS.items():
-        t = pl.Series([text])
-        if name in STRIP:
-            t = t.str.replace_all(STRIP[name], " ")
-        if t.str.contains(rx(pat))[0]:
-            hits.add(name)
-    return hits
+    df = pl.DataFrame({"id": ["x"], "title": [""], "abstract": [text]})
+    row = mention_flags(df, ALL_NAMES).row(0, named=True)
+    return {n for n in ALL_NAMES if row[n]}
 
 
 class TestBenchmarks(unittest.TestCase):

@@ -66,6 +66,7 @@ BENCHMARKS: dict[str, tuple[str, str, list[str]]] = {
     "MMLU / GSM8K": ("NLP & LLM", r"(?-i)\bMMLU\b|(?i)gsm-?8k", ["W3121904249", "W3083410900", "W3210904070"]),
     "VQA / CoIN": ("NLP & LLM", r"\bvqa\b|(?-i)\bCoIN\b", ["W4392822544"]),
 }
+ROUND1_NAMES = list(BENCHMARKS)  # the detector scored in round 1 (frozen at 8381df9); never edit
 # Text removed before matching a benchmark, so that e.g. "ImageNet-R" or
 # "mini-ImageNet" does not also count as ImageNet (polars regex has no lookahead).
 STRIP = {
@@ -79,16 +80,39 @@ def rx(pattern: str) -> str:
     return pattern if pattern.startswith("(?-i)") else "(?i)" + pattern
 
 
-def detect(works: pl.DataFrame, refs: pl.DataFrame) -> pl.DataFrame:
-    """Boolean columns `<name>|mention` and `<name>|cite` per work."""
-    text = pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "), pl.col("abstract").fill_null("")])
-    out = works.select("id", "first_year", "has_abstract", "has_refs")
+FAMILY = {n: v[0] for n, v in BENCHMARKS.items()}
+ALL_NAMES = list(BENCHMARKS)
+
+
+def text_of() -> pl.Expr:
+    """Title + abstract, the text every mention rule reads."""
+    return pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "), pl.col("abstract").fill_null("")])
+
+
+def mention_flags(df: pl.DataFrame, names: list[str]) -> pl.DataFrame:
+    """`id` plus one boolean column per benchmark name: does the title or abstract name it?"""
+    text = text_of()
     cols = []
-    for name, (_, pat, ids) in BENCHMARKS.items():
+    for name in names:
         t = text.str.replace_all(STRIP[name], " ") if name in STRIP else text
-        cols.append(works.select(t.str.contains(rx(pat)).alias(f"{name}|mention")).to_series())
+        cols.append(t.str.contains(rx(BENCHMARKS[name][1])).alias(name))
+    return df.with_columns(cols).select("id", *names)
+
+
+def analysis_names() -> list[str]:
+    """Benchmark names behind the findings."""
+    return list(BENCHMARKS)
+
+
+def detect(works: pl.DataFrame, refs: pl.DataFrame, names: list[str]) -> pl.DataFrame:
+    """Boolean columns `<name>|mention` and `<name>|cite` per work."""
+    m = mention_flags(works, names).rename({n: f"{n}|mention" for n in names})
+    out = works.select("id", "first_year", "has_abstract", "has_refs").join(m, on="id", maintain_order="left")
+    cols = []
+    for name in names:
+        ids = BENCHMARKS[name][2] if name in BENCHMARKS else []
         citing = set(refs.filter(pl.col("ref_id").is_in([f"https://openalex.org/{i}" for i in ids]))["work_id"])
-        cols.append(works["id"].is_in(list(citing)).alias(f"{name}|cite"))
+        cols.append(out["id"].is_in(list(citing)).alias(f"{name}|cite"))
     return out.with_columns(cols)
 
 
@@ -99,11 +123,11 @@ def main() -> None:
                            (pl.col("n_references") > 0).alias("has_refs")))
     refs = pl.read_parquet(C.PROCESSED / "references.parquet").filter(
         pl.col("work_id").is_in(works["id"].implode()))
-    d = detect(works, refs)
-    names = list(BENCHMARKS)
+    names = analysis_names()
+    d = detect(works, refs, names)
     d = d.with_columns([(pl.col(f"{n}|mention") | pl.col(f"{n}|cite")).alias(n) for n in names])
     for fam in FAMILIES:
-        members = [n for n in names if BENCHMARKS[n][0] == fam]
+        members = [n for n in names if FAMILY[n] == fam]
         d = d.with_columns(pl.any_horizontal(members).alias(f"fam:{fam}"))
     d = d.with_columns(pl.any_horizontal(names).alias("any_benchmark"),
                        pl.any_horizontal([f"{n}|mention" for n in names]).alias("any_mention"),
@@ -126,13 +150,13 @@ def main() -> None:
         .sort("first_year"))
     mix_mention = (ev.filter(pl.col("any_mention")).group_by("first_year").agg(
         [pl.len().alias("works_naming_benchmark")]
-        + [pl.any_horizontal([f"{n}|mention" for n in names if BENCHMARKS[n][0] == f]).mean().round(4).alias(f)
+        + [pl.any_horizontal([f"{n}|mention" for n in names if FAMILY[n] == f]).mean().round(4).alias(f)
            for f in FAMILIES])
         .sort("first_year"))
     signals = pl.DataFrame([{
-        "benchmark": n, "family": BENCHMARKS[n][0], "mention": int(ev[f"{n}|mention"].sum()),
+        "benchmark": n, "family": FAMILY[n], "mention": int(ev[f"{n}|mention"].sum()),
         "cite": int(ev[f"{n}|cite"].sum()), "both": int((ev[f"{n}|mention"] & ev[f"{n}|cite"]).sum()),
-        "either": int(ev[n].sum()), "has_cite_anchor": bool(BENCHMARKS[n][2]),
+        "either": int(ev[n].sum()), "has_cite_anchor": bool(BENCHMARKS[n][2]) if n in BENCHMARKS else False,
     } for n in names])
 
     C.RESULTS.mkdir(parents=True, exist_ok=True)
@@ -141,7 +165,7 @@ def main() -> None:
     mix.write_csv(C.RESULTS / "benchmark_mix_by_year.csv")
     mix_mention.write_csv(C.RESULTS / "benchmark_mix_mention_only_by_year.csv")
     signals.write_csv(C.RESULTS / "benchmark_signals.csv")
-    audit(works, d)
+    audit(works, d, names)
     figure(mix, by_year)
 
     with pl.Config(tbl_rows=40, tbl_cols=14, tbl_width_chars=220):
@@ -151,18 +175,16 @@ def main() -> None:
         print(mix_mention)
 
 
-def audit(works: pl.DataFrame, d: pl.DataFrame, per: int = 4) -> None:
+def audit(works: pl.DataFrame, d: pl.DataFrame, names: list[str], per: int = 4) -> None:
     """Random mention snippets per benchmark, for a manual precision check."""
-    text = pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "), pl.col("abstract").fill_null("")])
     rows = []
-    for name, (_, pat, _) in BENCHMARKS.items():
-        t = text.str.replace_all(STRIP[name], " ") if name in STRIP else text
-        w = works.select("id", t.alias("text"))
-        s = w.join(d.filter(pl.col(f"{name}|mention")).select("id"), on="id")
+    for name in names:
+        t = text_of().str.replace_all(STRIP[name], " ") if name in STRIP else text_of()
+        s = works.select("id", t.alias("text")).join(d.filter(pl.col(f"{name}|mention")).select("id"), on="id")
         if s.height == 0:
             continue
         s = s.sample(min(per, s.height), seed=SEED)
-        snip = s.select("id", pl.col("text").str.extract("(?s)(.{0,70}(?:" + rx(pat) + ").{0,50})")
+        snip = s.select("id", pl.col("text").str.extract("(?s)(.{0,70}(?:" + rx(BENCHMARKS[name][1]) + ").{0,50})")
                         .alias("snippet"))
         rows += [{"benchmark": name, **r} for r in snip.iter_rows(named=True)]
     pl.DataFrame(rows).write_csv(C.RESULTS / "benchmark_audit.csv")

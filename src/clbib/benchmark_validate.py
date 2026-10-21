@@ -26,7 +26,7 @@ import random
 import polars as pl
 
 from . import config as C
-from .benchmarks import BENCHMARKS, FAMILIES, STRIP, rx
+from .benchmarks import FAMILIES, FAMILY, ROUND1_NAMES, mention_flags
 from .corpus import focused
 from . import llm_label
 from .llm_label import kappa
@@ -59,24 +59,12 @@ Rules: count only datasets the text names. "Experiments on three benchmark datas
 Answer with one JSON object and nothing else: {"mnist_scale":0|1, ... all 8 keys ..., "notes":"datasets you saw, or empty"}"""
 
 
-def text_expr() -> pl.Expr:
-    return pl.concat_str([pl.col("title").fill_null(""), pl.lit(" "), pl.col("abstract").fill_null("")])
-
-
-def detect_families(df: pl.DataFrame) -> pl.DataFrame:
-    """Detector family flags from abstract mentions (same regexes as benchmarks.py)."""
-    t = text_expr()
-    cols = {}
-    for name, (fam, pat, _) in BENCHMARKS.items():
-        tt = t.str.replace_all(STRIP[name], " ") if name in STRIP else t
-        cols[name] = df.select(tt.str.contains(rx(pat))).to_series()
-    out = df.select("id")
-    for fam in FAMILIES:
-        members = [cols[n] for n in BENCHMARKS if BENCHMARKS[n][0] == fam]
-        s = members[0]
-        for m in members[1:]:
-            s = s | m
-        out = out.with_columns(s.alias(KEYS[fam]))
+def detect_families(df: pl.DataFrame, names: list[str] | None = None) -> pl.DataFrame:
+    """Detector family flags from title + abstract mentions. Default: the round-1 detector."""
+    names = ROUND1_NAMES if names is None else names
+    m = mention_flags(df, names)
+    out = m.select("id", *[pl.any_horizontal([n for n in names if FAMILY[n] == fam]).alias(KEYS[fam])
+                           for fam in FAMILIES])
     return out.with_columns(pl.any_horizontal(LABELS).alias("any"))
 
 
