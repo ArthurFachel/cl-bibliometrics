@@ -12,7 +12,6 @@ A reproducible bibliometric dataset of continual learning and catastrophic forge
 - **China now writes half of it.** Among works with a known affiliation, China's share rose from 19% (2015-2019) to 53% (2023-2026), and the US share fell from 40% to 18%. OpenAlex's China attribution agrees with publisher affiliations in 99% of checked works. Industry co-authorship fell from 24% of works in 2019 to 8% in 2026, but PEFT/LLM works are 1.7x more likely than the rest to have a company author.
 - **Benchmarks moved from MNIST to pre-trained models, and only lately to LLMs.** Among works that name or cite a benchmark, MNIST-scale datasets went from 47% in 2018 to 12% in 2023. Pre-trained-era benchmarks (ImageNet-R, CUB, DomainNet, VTAB) rose from 6% to 24% in 2025. Language benchmarks stayed at 4-6% through 2024 and reached 14% in 2026, but that's a floor: on a fresh validation sample the detector finds only about one in four language-benchmark papers. CIFAR stays the default throughout.
 - **arXiv matters less than it did.** 57% of focused works were also on arXiv in 2019, against 38% in 2025. The broad corpus shows the same drop (54% -> 37%), so it isn't an artefact of the focus rule.
-- **Brazil is marginal.** 32 focused works since 2015 (rank 30, under 0.5% of the field), led by UNICAMP and UFPE.
 - **Keyword search over-collects.** 10-22% of works matched by the queries only mention continual learning in passing, depending on which labeller is asked. That's why all findings use a stricter focused corpus (precision 0.93-0.98 on held-out data).
 
 None of these findings changes when works that exist only on deposit repositories such as Zenodo are put back in (see [Sensitivity](#sensitivity-repository-only-works)). Only the 2026 volume does.
@@ -309,7 +308,7 @@ validation/       samples, label files and labelling guide
 
 ## Author
 
-Arthur Fachel, Data Analytics @ PUCRS, MALTA Lab. Research on neuron-level plasticity for continual learning.
+Arthur Fachel, Data Science @ PUCRS, MALTA Lab. 
 
 ## License
 
