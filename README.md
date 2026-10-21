@@ -4,6 +4,10 @@ How did continual learning research move from small vision benchmarks to large l
 
 A reproducible bibliometric dataset of continual learning and catastrophic forgetting research, built from [OpenAlex](https://openalex.org), with every number traceable to a dated API snapshot.
 
+3-page summary: [`docs/report.pdf`](docs/report.pdf). Processed data and report: [release v1.0.0](https://github.com/ArthurFachel/cl-bibliometrics/releases/tag/v1.0.0).
+
+![Who wrote PEFT/LLM work and whose work the field built on](figures/drivers.png)
+
 ## Findings (snapshot 2026-10-19)
 
 - **US industry started the shift; China scaled it and now leads it.** Among PEFT/LLM works first seen in 2018-2023, US works got 60% of the field's in-corpus citations with 35% of the output, and works with a company author got 58% with 32%. Two papers carry much of that: Google's L2P and CODA-Prompt (Georgia Tech, IBM, Rice), both about prompting pre-trained vision transformers. Among 2024-2025 works, China writes 59% and gets 77% of the citations. Of the citations made to PEFT/LLM work in 2023, 67% went to US works; in 2026, 35%. See [Who drove the shift](#who-drove-the-shift-to-llms).
